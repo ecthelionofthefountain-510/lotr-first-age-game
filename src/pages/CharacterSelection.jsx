@@ -4,16 +4,16 @@ import useGameStore from '../store/gameStore';
 import './CharacterSelection.css';
 
 const characters = [
-  { name: "Beren", image: "/assets/characters/Beren.png" },
-  { name: "Túrin", image: "/assets/characters/Turin-Turambar.png" },
-  { name: "Tuor", image: "/assets/characters/Tuor.png" },
+  /*{ name: "Beren", image: "/assets/characters/Beren.png" },*/
+  /*{ name: "Túrin", image: "/assets/characters/Turin-Turambar.png" },*/
+  /*{ name: "Tuor", image: "/assets/characters/Tuor.png" },*/
   { name: "Fingolfin", image: "/assets/characters/Fingolfin.png" },
-  { name: "Ecthelion", image: "/assets/characters/Ecthelion.png" },
+  /*{ name: "Ecthelion", image: "/assets/characters/Ecthelion.png" },*/
   { name: "Azaghal", image: "/assets/characters/Azaghal.png" },
   { name: "Húrin", image: "/assets/characters/Hurin.png" },
-  { name: "Eönwë", image: "/assets/characters/Eonwe.png" },
-  { name: "Lúthien", image: "/assets/characters/Luthien.png" },
-  { name: "Thingol", image: "/assets/characters/Thingol.png" }
+  /*{ name: "Eönwë", image: "/assets/characters/Eonwe.png" },*/
+  /*{ name: "Lúthien", image: "/assets/characters/Luthien.png" },*/
+  /*{ name: "Thingol", image: "/assets/characters/Thingol.png" }*/
 ];
 
 const CharacterSelection = () => {

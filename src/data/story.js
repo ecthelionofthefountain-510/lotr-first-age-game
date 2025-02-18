@@ -11,8 +11,45 @@ const storyData = {
     { location: "Cabed-en-Aras", text: "Túrin konfronterar Glaurung och tar ett tragiskt öde.", image: "/assets/locations/Thangorodrim.png" }
   ],
   Fingolfin: [
-    { location: "Barad Eithel", text: "Fingolfin förbereder sin sista strid.", image: "/assets/locations/Belegost.png" },
-    { location: "Thangorodrim", text: "Fingolfin utmanar Morgoth i en duell som skakar jorden.", image: "/assets/locations/Thangorodrim.png" }
+    {
+      location: "Barad Eithel",
+      text: "Fingolfin prepares for his final stand. He watches as Morgoth’s armies march across Beleriand, realizing the end is near.",
+      image: "/assets/locations/Belegost.png",
+      choices: [
+        { text: "Ride alone to Angband and challenge Morgoth.", next: 1 },
+        { text: "Rally the remaining Noldor and fight defensively.", next: 2 }
+      ]
+    },
+    {
+      location: "Thangorodrim",
+      text: "Fingolfin rides alone to Angband and challenges Morgoth in single combat. The duel shakes the earth as Morgoth himself descends to battle.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: [
+        { text: "Strike with all your might, hoping to wound him.", next: 3 },
+        { text: "Dodge his attacks and wait for an opening.", next: 4 }
+      ]
+    },
+    {
+      location: "Eithel Sirion",
+      text: "Fingolfin chooses to defend his people instead. Though noble, this choice prolongs the inevitable defeat of the Noldor.",
+      image: "/assets/locations/Nargothrond.png",
+      choices: [
+        { text: "Lead a final charge against the enemy.", next: 5 },
+        { text: "Retreat and protect the last survivors.", next: 6 }
+      ]
+    },
+    {
+      location: "Thangorodrim",
+      text: "Fingolfin wounds Morgoth, striking his foot and causing the Dark Lord to limp forever. But the battle takes its toll, and he ultimately falls.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: []
+    },
+    {
+      location: "Thangorodrim",
+      text: "Fingolfin dodges Morgoth’s first blows, but the Dark Lord’s power is too overwhelming. Eventually, he is crushed under Morgoth’s hammer, Grond.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: []
+    }
   ],
   Ecthelion: [
     { location: "Gondolin", text: "Ecthelion försvarar Gondolin mot Morgoths styrkor.", image: "/assets/locations/Gondolin.png" },
@@ -24,14 +61,80 @@ const storyData = {
     { location: "Gondolin", text: "Tuor når den gömda staden och blir en rådgivare.", image: "/assets/locations/Gondolin.png" }
   ],
   Azaghal: [
-    { location: "Belegost", text: "Azaghal, härskare över Belegost, smider rustningar till sina krigare.", image: "/assets/locations/Belegost.png" },
-    { location: "Nirnaeth Arnoediad", text: "Azaghal leder sina dvärgar i kriget mot Morgoth.", image: "/assets/locations/Nirnaeth-Arnoediad.png" },
-    { location: "Angband", text: "Azaghal sårar Glaurung men faller själv i strid.", image: "/assets/locations/Angband.png" }
+    {
+      location: "Belegost",
+      text: "Azaghal, Lord of Belegost, receives word that Morgoth’s armies are marching. The Dwarves must decide their course of action.",
+      image: "/assets/locations/Belegost.png",
+      choices: [
+        { text: "March to war and support the Elves.", next: 1 },
+        { text: "Stay in Belegost and fortify against invasion.", next: 2 }
+      ]
+    },
+    {
+      location: "Nirnaeth Arnoediad",
+      text: "Azaghal and his dwarves arrive at the battlefield. Their iron-clad warriors charge against Morgoth’s forces, wielding axes and fire.",
+      image: "/assets/locations/Nirnaeth-Arnoediad.png",
+      choices: [
+        { text: "Engage Glaurung, the Father of Dragons.", next: 3 },
+        { text: "Focus on breaking the orc ranks.", next: 4 }
+      ]
+    },
+    {
+      location: "Belegost",
+      text: "The dwarves remain in their mountain halls, avoiding destruction but forsaking their allies. Belegost is spared, but at what cost?",
+      image: "/assets/locations/Belegost.png",
+      choices: []
+    },
+    {
+      location: "Angband",
+      text: "Azaghal fights Glaurung, piercing the dragon’s belly with his dagger before being crushed beneath its weight.",
+      image: "/assets/locations/Angband.png",
+      choices: []
+    },
+    {
+      location: "Nirnaeth Arnoediad",
+      text: "Azaghal’s warriors break through Morgoth’s orcish ranks, dealing massive damage before being forced to retreat.",
+      image: "/assets/locations/Nirnaeth-Arnoediad.png",
+      choices: []
+    }
   ],
   Húrin: [
-    { location: "Dor-lómin", text: "Húrin leder sin klan och förbereder sig för krig.", image: "/assets/locations/Belegost.png" },
-    { location: "Nirnaeth Arnoediad", text: "Húrin slåss vid Turgons sida men blir tillfångatagen.", image: "/assets/locations/Nirnaeth-Arnoediad.png" },
-    { location: "Thangorodrim", text: "Húrin kedjas fast och ser på när Morgoths förbannelse slår in.", image: "/assets/locations/Thangorodrim.png" }
+    {
+      location: "Nirnaeth Arnoediad",
+      text: "Húrin fights alongside Turgon, holding the western flank. The battle turns into chaos as Morgoth’s forces encircle them.",
+      image: "/assets/locations/Nirnaeth-Arnoediad.png",
+      choices: [
+        { text: "Stay and hold the line to let Turgon escape.", next: 1 },
+        { text: "Try to break through with your warriors.", next: 2 }
+      ]
+    },
+    {
+      location: "Nirnaeth Arnoediad",
+      text: "Húrin stands his ground, buying time for Gondolin’s king to flee. One by one, his warriors fall, until he alone remains.",
+      image: "/assets/locations/Nirnaeth-Arnoediad.png",
+      choices: [
+        { text: "Fight until the last breath.", next: 3 },
+        { text: "Surrender to Morgoth’s forces.", next: 4 }
+      ]
+    },
+    {
+      location: "Ered Wethrin",
+      text: "Húrin leads a desperate charge, but Morgoth’s armies crush his forces. Captured, he is taken to Thangorodrim.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: []
+    },
+    {
+      location: "Thangorodrim",
+      text: "Húrin slays countless orcs, shouting 'Aurë entuluva!' but is eventually overwhelmed. Morgoth binds him in chains to watch the downfall of his family.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: []
+    },
+    {
+      location: "Thangorodrim",
+      text: "Surrendering to Morgoth is not a choice. Húrin is dragged to Angband and cursed to witness his bloodline’s doom.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: []
+    }
   ],
   Eönwë: [
     { location: "Valinor", text: "Eönwë kallas till strid av Manwë och samlar Valars armé.", image: "/assets/locations/Belegost.png" },
