@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 
+body {
+  background-image: url(/public/background.jpg);
+}
+
 .start-container {
   background: url('/assets/background.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -21,6 +25,13 @@
 .subtitle {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  color: black;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: ghostwhite;
+  padding: 10px;
+  opacity: 0.8;
+
 }
 
 .button-container {
@@ -41,5 +52,5 @@ button {
 }
 
 button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(0, 0, 0);
 }
