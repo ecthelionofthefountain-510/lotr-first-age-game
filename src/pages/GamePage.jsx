@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useGameStore from '../store/gameStore';
 import storyData from '../data/story';
 import './GamePage.css';
+import { useNavigate } from 'react-router-dom';
 
 const GamePage = () => {
   const { currentCharacter, characterProgress, saveProgress } = useGameStore();
@@ -38,11 +39,15 @@ const GamePage = () => {
     return () => clearInterval(interval);
   }, [progress]);
 
-  const handleNext = (nextIndex) => {
-    if (!isTyping && nextIndex !== undefined) { // Förhindrar att användaren trycker medan texten skrivs
-      saveProgress(currentCharacter, chapters[nextIndex].location, nextIndex);
-    }
-  };
+  const navigate = useNavigate();
+
+const handleNext = (nextIndex) => {
+  if (nextIndex === "battle") {
+    navigate('/battle'); // Skickar spelaren till BattlePage
+  } else if (nextIndex !== undefined) {
+    saveProgress(currentCharacter, chapters[nextIndex].location, nextIndex);
+  }
+};
 
   return (
     <div className="game-container">

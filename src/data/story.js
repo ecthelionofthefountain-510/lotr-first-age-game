@@ -25,8 +25,7 @@ const storyData = {
       text: "Fingolfin rides alone to Angband and challenges Morgoth in single combat. The duel shakes the earth as Morgoth himself descends to battle.",
       image: "/assets/locations/Thangorodrim.png",
       choices: [
-        { text: "Strike with all your might, hoping to wound him.", next: 3 },
-        { text: "Dodge his attacks and wait for an opening.", next: 4 }
+        { text: "Fight!", next: "battle" }
       ]
     },
     {
@@ -47,6 +46,12 @@ const storyData = {
     {
       location: "Thangorodrim",
       text: "Fingolfin dodges Morgoth’s first blows, but the Dark Lord’s power is too overwhelming. Eventually, he is crushed under Morgoth’s hammer, Grond.",
+      image: "/assets/locations/Thangorodrim.png",
+      choices: []
+    },
+    {
+      location: "Fingolfin's Fall",
+      text: "Fingolfin lies broken before the gates of Angband. Morgoth, limping from his wounds, crushes the Elf-lord beneath his great foot. His body is taken by Thorondor, the mighty eagle, and carried away.",
       image: "/assets/locations/Thangorodrim.png",
       choices: []
     }
