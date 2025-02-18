@@ -25,7 +25,7 @@ const storyData = {
       text: "Fingolfin rides alone to Angband and challenges Morgoth in single combat. The duel shakes the earth as Morgoth himself descends to battle.",
       image: "/assets/locations/Thangorodrim.png",
       choices: [
-        { text: "Fight!", next: "battle" }
+        { text: "Fight!", next: "battle" } // Stridssystemet startar här
       ]
     },
     {
@@ -80,8 +80,7 @@ const storyData = {
       text: "Azaghal and his dwarves arrive at the battlefield. Their iron-clad warriors charge against Morgoth’s forces, wielding axes and fire.",
       image: "/assets/locations/Nirnaeth-Arnoediad.png",
       choices: [
-        { text: "Engage Glaurung, the Father of Dragons.", next: 3 },
-        { text: "Focus on breaking the orc ranks.", next: 4 }
+        { text: "Engage Glaurung, the Father of Dragons.", next: "battle-azaghal" } // Stridssystemet startar här
       ]
     },
     {
@@ -118,8 +117,7 @@ const storyData = {
       text: "Húrin stands his ground, buying time for Gondolin’s king to flee. One by one, his warriors fall, until he alone remains.",
       image: "/assets/locations/Nirnaeth-Arnoediad.png",
       choices: [
-        { text: "Fight until the last breath.", next: 3 },
-        { text: "Surrender to Morgoth’s forces.", next: 4 }
+        { text: "Fight until the last breath.", next: "battle-hurin" } // Stridssystemet startar här
       ]
     },
     {

@@ -41,13 +41,13 @@ const GamePage = () => {
 
   const navigate = useNavigate();
 
-const handleNext = (nextIndex) => {
-  if (nextIndex === "battle") {
-    navigate('/battle'); // Skickar spelaren till BattlePage
-  } else if (nextIndex !== undefined) {
-    saveProgress(currentCharacter, chapters[nextIndex].location, nextIndex);
-  }
-};
+  const handleNext = (nextIndex) => {
+    if (typeof nextIndex === "string") {
+      navigate(`/${nextIndex}`);  // Om det är en sträng (t.ex. "battle-azaghal"), navigera direkt till route
+    } else if (nextIndex !== undefined) {
+      saveProgress(currentCharacter, storyData[currentCharacter][nextIndex].location, nextIndex);
+    }
+  };
 
   return (
     <div className="game-container">
