@@ -25,7 +25,7 @@ const storyData = {
       text: "Fingolfin rides alone to Angband and challenges Morgoth in single combat. The duel shakes the earth as Morgoth himself descends to battle.",
       image: "/assets/locations/Thangorodrim.png",
       choices: [
-        { text: "Fight!", next: "battle" } // Stridssystemet startar här
+        { text: "Fight!", next: "battle-fingolfin" } // Stridssystemet startar här
       ]
     },
     {

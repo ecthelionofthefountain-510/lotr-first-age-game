@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useGameStore from '../store/gameStore';
-import './BattlePage.css';
+
 
 const BattleHurin = () => {
   const { currentCharacter } = useGameStore();

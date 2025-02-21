@@ -42,8 +42,9 @@ const GamePage = () => {
   const navigate = useNavigate();
 
   const handleNext = (nextIndex) => {
-    if (typeof nextIndex === "string") {
-      navigate(`/${nextIndex}`);  // Om det är en sträng (t.ex. "battle-azaghal"), navigera direkt till route
+    console.log('nextIndex:', nextIndex); // Lägg till denna rad
+    if (typeof nextIndex === "string" && nextIndex.startsWith("battle-")) {
+      navigate(`/${nextIndex}`);
     } else if (nextIndex !== undefined) {
       saveProgress(currentCharacter, storyData[currentCharacter][nextIndex].location, nextIndex);
     }

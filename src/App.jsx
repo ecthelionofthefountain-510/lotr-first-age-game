@@ -1,3 +1,4 @@
+// App.jsx
 import { Routes, Route } from 'react-router-dom';
 import StartPage from './pages/StartPage';
 import CharacterSelection from './pages/CharacterSelection';
@@ -5,9 +6,10 @@ import GamePage from './pages/GamePage';
 import BattleFingolfin from './pages/BattleFingolfin';
 import BattleAzaghal from './pages/BattleAzaghal';
 import BattleHurin from './pages/BattleHurin';
-import EndFingolfin from './pages/EndFingolfin';
-import EndAzaghal from './pages/EndAzaghal';
-import EndHurin from './pages/EndHurin';
+import FingolfinEnd from './pages/FingolfinEnd';
+import AzaghalEnd from './pages/AzaghalEnd';
+import HurinEnd from './pages/HurinEnd';
+import LuthienEnd from './pages/LuthienEnd';
 
 function App() {
   return (
@@ -18,9 +20,10 @@ function App() {
       <Route path="/battle-fingolfin" element={<BattleFingolfin />} />
       <Route path="/battle-azaghal" element={<BattleAzaghal />} />
       <Route path="/battle-hurin" element={<BattleHurin />} />
-      <Route path="/end-fingolfin" element={<EndFingolfin />} />
-      <Route path="/end-azaghal" element={<EndAzaghal />} />
-      <Route path="/end-hurin" element={<EndHurin />} />
+      <Route path="/end-fingolfin" element={<FingolfinEnd />} />
+      <Route path="/end-azaghal" element={<AzaghalEnd />} />
+      <Route path="/end-hurin" element={<HurinEnd />} />
+      <Route path="/end-luthien" element={<LuthienEnd />} />
     </Routes>
   );
 }
