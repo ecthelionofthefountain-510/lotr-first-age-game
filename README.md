@@ -2,7 +2,7 @@
 
 A narrative adventure game that takes players through the legendary stories of J.R.R. Tolkien's First Age of Middle-earth. Experience the heroic last stands of characters like Fingolfin, Azaghal, and Húrin against the forces of Morgoth.
 
-![Tales of the First Age](./lotr-first-age-game/public/github-readme.png)
+![Tales of the First Age](/Users/user/my-react-projects/lotr-first-age-game/public/startpage-screenshot.png)
 
 ## 📖 About
 
