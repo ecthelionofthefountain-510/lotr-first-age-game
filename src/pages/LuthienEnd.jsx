@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Ending.css';
 
 const LuthienEnd = () => {
   const navigate = useNavigate();
