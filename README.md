@@ -2,8 +2,6 @@
 
 A narrative adventure game that takes players through the legendary stories of J.R.R. Tolkien's First Age of Middle-earth. Experience the heroic last stands of characters like Fingolfin, Azaghal, and Húrin against the forces of Morgoth.
 
-/* ![Tales of the First Age]([https://your-screenshot-url-here.png](https://i.pinimg.com/originals/ee/38/0d/ee380d304bfa121a7adf34d2aac970b8.jpg)) */
-
 ## 📖 About
 
 Tales of the First Age is an interactive story-based game built with React and Vite that allows players to experience pivotal moments from Tolkien's mythology. Choose your character and make crucial decisions that shape their legendary last stands against the dark forces of Morgoth.
