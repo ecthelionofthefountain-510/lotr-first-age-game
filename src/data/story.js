@@ -106,7 +106,7 @@ const storyData = {
     {
       location: "Nirnaeth Arnoediad",
       text: "Húrin fights alongside Turgon, holding the western flank. The battle turns into chaos as Morgoth’s forces encircle them.",
-      image: "/assets/locations/Nirnaeth-Arnoediad.png",
+      image: "/assets/story-scenes/hurin-turgon.png",
       choices: [
         { text: "Stay and hold the line to let Turgon escape.", next: 1 },
         { text: "Try to break through with your warriors.", next: 2 }
@@ -123,13 +123,13 @@ const storyData = {
     {
       location: "Ered Wethrin",
       text: "Húrin leads a desperate charge, but Morgoth’s armies crush his forces. Captured, he is taken to Thangorodrim.",
-      image: "/assets/locations/Thangorodrim.png",
+      image: "/assets/locations/Ered-Wethrin.png",
       choices: []
     },
     {
       location: "Thangorodrim",
       text: "Húrin slays countless orcs, shouting 'Aurë entuluva!' but is eventually overwhelmed. Morgoth binds him in chains to watch the downfall of his family.",
-      image: "/assets/locations/Thangorodrim.png",
+      image: "/assets/story-scenes/hurin-chained.png",
       choices: []
     },
     {
@@ -145,10 +145,120 @@ const storyData = {
     { location: "Angband", text: "Eönwë besegrar Morgoth och kedjar honom i tomrummet.", image: "/assets/locations/Angband.png" }
   ],
   Lúthien: [
-    { location: "Doriath", text: "Lúthien dansar i månskenet, ovetande om sitt öde.", image: "/assets/locations/Doriath.png" },
-    { location: "Menegroth", text: "Lúthien trotsar Thingol och lämnar Doriath för Beren.", image: "/assets/locations/Menegroth.png" },
-    { location: "Tol-in-Gaurhoth", text: "Lúthien räddar Beren från Saurons fängelse.", image: "/assets/locations/Tol-in-Gaurhoth.png" }
-  ],
+    {
+      location: "Doriath",  // Index 0
+      text: "In the enchanted forests of Doriath, Lúthien dances beneath the moon. She has yet to meet Beren, but fate is already weaving their paths together.",
+      image: "/assets/locations/Doriath.png",
+      choices: [
+        { text: "Continue dancing in the moonlight", next: 1 },
+        { text: "Return to Menegroth", next: 2 }
+      ]
+    },
+    {
+      location: "Forest Glade",  // Index 1
+      text: "As Lúthien dances, she hears a strange voice singing in the distance. It is Beren, a mortal man who has wandered into her realm. Their eyes meet, and destiny is set in motion.",
+      image: "/assets/locations/Doriath.png",
+      choices: [
+        { text: "Help Beren escape the hunters", next: 3 }
+      ]
+    },
+    {
+      location: "Menegroth",  // Index 2
+      text: "In the halls of Menegroth, King Thingol learns of Beren and Lúthien's love. Enraged, he demands a Silmaril from Morgoth's crown as bride-price, hoping to send Beren to his death.",
+      image: "/assets/locations/Menegroth.png",
+      choices: [
+        { text: "Accept Thingol's judgment", next: 4 },
+        { text: "Defy your father openly", next: 5 }
+      ]
+    },
+    {
+      location: "Tol-in-Gaurhoth",  // Index 3
+      text: "Learning that Beren has been captured by Sauron, Lúthien escapes her confinement in Doriath. She makes her way to Sauron's isle, where dark powers hold dominion.",
+      image: "/assets/locations/Tol-in-Gaurhoth.png",
+      choices: [
+        { text: "Confront Sauron", next: "battle-luthien" }
+      ]
+    },
+    {
+      location: "Tol-in-Gaurhoth",  // Index 4
+      text: "Defying her father openly brings swift consequences. Thingol orders her confined to a house high in the branches of Hírilorn, but Lúthien's determination cannot be contained.",
+      image: "/assets/locations/Tol-in-Gaurhoth.png",
+      choices: [
+        { text: "Use your magic to escape", next: 3 }
+      ]
+    },
+    {
+      location: "Dungeon of Tol-in-Gaurhoth",  // Index 5
+      text: "With Sauron defeated and his tower fallen, Lúthien finds Beren in the dungeons. Together with Huan, the great wolfhound, they prepare for their next challenge.",
+      image: "/assets/story-scenes/luthien-saves-beren.png",
+      choices: [
+        { text: "Journey towards Angband", next: 6 }
+      ]
+    },
+    {
+      location: "Anfauglith",  // Index 6
+      text: "Crossing the vast plain before Angband, Lúthien, Beren, and Huan devise their plan. They must somehow bypass Morgoth's defenses and reach the Iron Crown itself.",
+      image: "/assets/locations/Anfauglith.png",
+      choices: [
+        { text: "Use song and enchantment to enter", next: 7 },
+        { text: "Attempt to sneak in through stealth", next: 7 }
+      ]
+    },
+    {
+      location: "Angband",  // Index 7
+      text: "Through Lúthien's power and enchantment, they enter Morgoth's fortress. In his great hall, the Dark Lord himself sits upon his throne, intrigued by Lúthien's dance.",
+      image: "/assets/locations/Angband.png",
+      choices: [
+        { text: "Dance before Morgoth", next: 8 }
+      ]
+    },
+    {
+      location: "Morgoth's Throne",  // Index 8
+      text: "Lúthien's dance entrances Morgoth and his entire court. As her spell takes hold, the Dark Lord's eyelids grow heavy with sleep. This is their moment.",
+      image: "/assets/story-scenes/luthien-sings-to-morgoth.png",
+      choices: [
+        { text: "Complete the enchantment", next: 9 }
+      ]
+    },
+    {
+      location: "Victory",  // Index 9
+      text: "As Morgoth slumbers, Beren cuts a Silmaril from his crown. The jewel blazes with holy light in his hand. But greed takes him, and he attempts to take another...",
+      image: "/assets/story-scenes/beren-cuts-silmaril.png",
+      choices: [
+        { text: "Try to stop Beren", next: 10 }
+      ]
+    },
+    {
+      location: "Morgoth Awakens",  // Index 10
+      text: "The knife slips, cutting Morgoth's cheek. The Dark Lord's eyes snap open, and his roar of fury shakes the very foundations of Angband. The spell is broken. Take flight!",
+      image: "/assets/story-scenes/greedy-beren.png",
+      choices: [
+        { text: "Flee with Beren", next: 11 }
+      ]
+    },
+    {
+      location: "Gates of Angband",  // Index 11
+      text: "Racing through the halls of Angband, they reach the gates. But there waits Carcharoth, the mightiest of all wolves. The Silmaril blazes in Beren's hand.",
+      image: "/assets/characters/Carcharoth.png",
+      choices: [
+        { text: "Try to pass the wolf", next: 12 }
+      ]
+    },
+    {
+      location: "Carcharoth's Challenge",  // Index 12
+      text: "Beren holds up the Silmaril, hoping to terrify the wolf with its holy light. But Carcharoth, maddened by Morgoth's evil and his own rage, bites off Beren's hand, swallowing both it and the Silmaril.",
+      image: "/assets/story-scenes/carcharoth-rage.png",
+      choices: [
+        { text: "Escape while the wolf writhes in pain", next: 13 }
+      ]
+    },
+    {
+      location: "The Flight",  // Index 13
+      text: "As Carcharoth runs wild with pain from the burning Silmaril within him, Lúthien tends to Beren's grievous wound. Behind them, Morgoth's armies pour forth from Angband. They must flee quickly.",
+      image: "/assets/story-scenes/beren-luthien-huan-escape.png",
+      choices: []
+    }
+],
   Thingol: [
     { location: "Menegroth", text: "Thingol styr över Doriath från sin gyllene sal.", image: "/assets/locations/Menegroth.png" },
     { location: "Doriath", text: "Thingol förkastar dvärgarnas krav och skapar konflikt.", image: "/assets/locations/Doriath.png" },

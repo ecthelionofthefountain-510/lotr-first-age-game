@@ -7,7 +7,7 @@ const BattleFingolfin = () => {
     enemyName: "Morgoth",
     playerDamageRange: [5, 15],
     enemyDamageRange: [10, 30],
-    playerImage: "/assets/characters/Fingolfin.png",
+    playerImage: "/assets/characters/Fingolfin2.png",
     enemyImage: "/assets/characters/Morgoth.png",
     specialMoves: [
       {
