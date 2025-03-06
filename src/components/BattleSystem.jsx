@@ -12,7 +12,8 @@ export const BattleSystem = ({
   playerImage,
   enemyImage,
   urlName,
-  continueToStory = false
+  continueToStory = false,
+  onBattleStateChange = null // New prop for reporting battle state
 }) => {
   const navigate = useNavigate();
   const { saveProgress } = useGameStore();
@@ -25,6 +26,26 @@ export const BattleSystem = ({
   const [specialMoveCooldowns, setSpecialMoveCooldowns] = useState(
     specialMoves.reduce((acc, move) => ({ ...acc, [move.name]: 0 }), {})
   );
+  
+  // Report initial battle state
+  useEffect(() => {
+    if (onBattleStateChange) {
+      onBattleStateChange('start');
+    }
+  }, []);
+  
+  // Report battle state changes based on HP
+  useEffect(() => {
+    if (!onBattleStateChange) return;
+    
+    if (playerHP < 30 && enemyHP > 50) {
+      onBattleStateChange('player-losing');
+    } else if (enemyHP < 30 && playerHP > 50) {
+      onBattleStateChange('player-winning');
+    } else if (playerHP <= 0 || enemyHP <= 1) {
+      onBattleStateChange('battle-end');
+    }
+  }, [playerHP, enemyHP, onBattleStateChange]);
 
   const handleSpecialMove = (move) => {
     if (specialMoveCooldowns[move.name] > 0) return;

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BattleSystem from '../components/BattleSystem';
+import BattleMusic from '../components/BattleMusic';
 
 const BattleHurin = () => {
+  const [battleState, setBattleState] = useState('start');
+  
   const hurinConfig = {
     character: "Húrin",
     enemyName: "Orc Horde",
@@ -21,10 +24,19 @@ const BattleHurin = () => {
         cooldown: 5
       }
     ],
-    urlName: "hurin"
+    urlName: "hurin",
+    onBattleStateChange: (state) => setBattleState(state)
   };
 
-  return <BattleSystem {...hurinConfig} />;
+  return (
+    <>
+      <BattleMusic 
+        src="/assets/music/hurin-battle.mp3" 
+        battleState={battleState}
+      />
+      <BattleSystem {...hurinConfig} />
+    </>
+  );
 };
 
 export default BattleHurin;

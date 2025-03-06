@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BattleSystem from '../components/BattleSystem';
+import BattleMusic from '../components/BattleMusic';
 
 const BattleFingolfin = () => {
+  const [battleState, setBattleState] = useState('start');
+  
   const fingolfinConfig = {
     character: "Fingolfin",
     enemyName: "Morgoth",
@@ -20,10 +23,19 @@ const BattleFingolfin = () => {
         damage: [20, 30],
         cooldown: 5
       }
-    ]
+    ],
+    onBattleStateChange: (state) => setBattleState(state)
   };
 
-  return <BattleSystem {...fingolfinConfig} />;
+  return (
+    <>
+      <BattleMusic 
+        src="/assets/music/fingolfin-vs-morgoth.mp3" 
+        battleState={battleState}
+      />
+      <BattleSystem {...fingolfinConfig} />
+    </>
+  );
 };
 
 export default BattleFingolfin;

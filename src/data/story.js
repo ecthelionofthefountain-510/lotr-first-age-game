@@ -263,7 +263,119 @@ const storyData = {
     { location: "Menegroth", text: "Thingol styr över Doriath från sin gyllene sal.", image: "/assets/locations/Menegroth.png" },
     { location: "Doriath", text: "Thingol förkastar dvärgarnas krav och skapar konflikt.", image: "/assets/locations/Doriath.png" },
     { location: "Menegroth", text: "Dvärgarna stormar Menegroth och Thingol möter sitt öde.", image: "/assets/locations/Menegroth.png" }
-  ]
+  ],
+  Fëanor: [
+  {
+    location: "Tirion",
+    text: "In the shining city of Tirion upon Túna, Fëanor completes his greatest work—the Silmarils. Three jewels of unparalleled beauty, capturing the light of the Two Trees. Their creation has demanded all his skill and much of his spirit.",
+    image: "/assets/locations/Tirion.png",
+    choices: [
+      { text: "Present the Silmarils at court", next: 1 },
+      { text: "Keep them hidden from others", next: 2 }
+    ]
+  },
+  {
+    location: "Court of Finwë",
+    text: "The court of the High King Finwë marvels at the Silmarils' radiance. Your father beams with pride, but you notice the hunger in Melkor's eyes as he watches from the shadows. The Valar decree that such treasures should be shared with all.",
+    image: "/assets/locations/Tirion.png",
+    choices: [
+      { text: "Share the light with all Valinor", next: 3 },
+      { text: "Refuse and guard your creation", next: 4 }
+    ]
+  },
+  {
+    location: "Hidden Forge",
+    text: "You keep the Silmarils secret, working tirelessly to enhance their protection. Rumors spread nonetheless. One night, you find evidence of an intruder in your forge—someone has been watching. Dark whispers reach your ears of Melkor's interest.",
+    image: "/assets/locations/Forge.png",
+    choices: [
+      { text: "Seek the Valar's protection", next: 3 },
+      { text: "Create stronger defenses alone", next: 4 }
+    ]
+  },
+  {
+    location: "Taniquetil",
+    text: "You bring the Silmarils before Manwë himself. The Lord of the Breath of Arda blesses your creation, decreeing that the jewels shall bring joy to all of Valinor. For a time, peace reigns, though you never fully relinquish your claim.",
+    image: "/assets/locations/Taniquetil.png",
+    choices: [
+      { text: "Continue your work in peace", next: 5 }
+    ]
+  },
+  {
+    location: "Formenos",
+    text: "Your mistrust grows. You fortify your home and forge at Formenos, surrounding yourself with loyal followers. The Silmarils remain locked away, their light hidden from all but a few. Melkor's lies poison the peace between you and your half-brothers.",
+    image: "/assets/locations/Formenos.png",
+    choices: [
+      { text: "Confront Melkor about his lies", next: 5 }
+    ]
+  },
+  {
+    location: "Darkness Falls",
+    text: "Disaster strikes. Melkor and Ungoliant destroy the Two Trees, plunging Valinor into darkness. In the chaos, they attack Formenos. Your father, King Finwë, is slain—the first death in the Blessed Realm. The Silmarils are stolen.",
+    image: "/assets/story-scenes/trees-destroyed.png",
+    choices: [
+      { text: "Plead with the Valar to pursue Melkor", next: 6 },
+      { text: "Swear an oath to recover the Silmarils", next: 7 }
+    ]
+  },
+  {
+    location: "Ring of Doom",
+    text: "Before the Valar, you demand action, but they seem more concerned with salvaging the Trees. Yavanna reveals that your Silmarils could restore the light, if broken. The choice is impossible—your father's memory or your greatest creation.",
+    image: "/assets/locations/Ring-of-Doom.png",
+    choices: [
+      { text: "Refuse to break the Silmarils", next: 7 },
+      { text: "Consider sacrificing them", next: 8 }
+    ]
+  },
+  {
+    location: "Tirion Square",
+    text: "In the darkened square of Tirion, before a great crowd, you and your seven sons swear the terrible Oath: to pursue with vengeance any being who withholds a Silmaril from your possession. The words echo with dreadful power, binding you to your fate.",
+    image: "/assets/story-scenes/oath-of-feanor.png",
+    choices: [
+      { text: "Lead the Noldor to Middle-earth", next: 9 }
+    ]
+  },
+  {
+    location: "Council of the Valar",
+    text: "Your heart wavers. Perhaps the light of the Trees is worth more than your pride. But before you can decide, news arrives—Melkor has fled to Middle-earth. The Valar debate pursuing him, but their deliberation seems endless to your burning grief.",
+    image: "/assets/locations/Taniquetil.png",
+    choices: [
+      { text: "Take matters into your own hands", next: 7 }
+    ]
+  },
+  {
+    location: "Shores of Alqualondë",
+    text: "You lead your people to the shores, demanding ships from the Teleri to pursue Melkor—now called Morgoth. When they refuse, rage consumes you. The first Kinslaying stains the white shores with elven blood. The ships are taken, but at terrible cost.",
+    image: "/assets/story-scenes/kinslaying.png",
+    choices: [
+      { text: "Continue the journey with heavy heart", next: 10 },
+      { text: "Abandon those who question your actions", next: 11 }
+    ]
+  },
+  {
+    location: "Araman",
+    text: "The host marches through the freezing wastes of Araman. Doubt spreads among your followers. Mandos himself appears, pronouncing the Doom of the Noldor—exile and sorrow await all who continue. Many repent, but your pride will not be swayed.",
+    image: "/assets/locations/Araman.png",
+    choices: [
+      { text: "Press on despite the Doom", next: 11 }
+    ]
+  },
+  {
+    location: "Losgar",
+    text: "Reaching the far shore, you order the white ships burned. The flames rise high, a signal to those you've left behind—there is no going back. Your brother Fingolfin and his people are abandoned to cross the Helcaraxë or return in shame.",
+    image: "/assets/story-scenes/burning-ships.png",
+    choices: [
+      { text: "March inland to face Morgoth", next: 12 }
+    ]
+  },
+  {
+    location: "Mithrim",
+    text: "The shores of Middle-earth welcome you with battle. Morgoth's forces, alerted by the burning ships, attack. Your army is victorious but caught unprepared for the full might of the enemy that soon descends upon you.",
+    image: "/assets/locations/Mithrim.png",
+    choices: [
+      { text: "Fight Morgoth's forces", next: "battle-feanor" }
+    ]
+  }
+]
 };
 
 export default storyData;

@@ -1,31 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BattleSystem from '../components/BattleSystem';
+import BattleMusic from '../components/BattleMusic';
 
 const BattleLuthien = () => {
+  const [battleState, setBattleState] = useState('start');
+  
   const luthienConfig = {
     character: "Lúthien",
     enemyName: "Sauron",
-    playerDamageRange: [15, 25],     // Ökat grundskada
-    enemyDamageRange: [5, 15],       // Minskat Saurons skada
+    playerDamageRange: [15, 25],
+    enemyDamageRange: [5, 15],
     playerImage: "/assets/story-scenes/luthien-huan.png",
     enemyImage: "/assets/story-scenes/sauron-werewolf.png",
     specialMoves: [
       {
         name: "Song of Power",
-        damage: [25, 35],            // Ökat specialskada
-        cooldown: 2                  // Minskat cooldown
+        damage: [25, 35],
+        cooldown: 2
       },
       {
         name: "Dance of Enchantment",
-        damage: [30, 40],            // Ökat specialskada
-        cooldown: 4                  // Minskat cooldown
+        damage: [30, 40],
+        cooldown: 4
       }
     ],
     urlName: "luthien",
-    continueToStory: true            // Fortsätt storyn efter vinst
+    continueToStory: true,
+    onBattleStateChange: (state) => setBattleState(state)
   };
 
-  return <BattleSystem {...luthienConfig} />;
+  return (
+    <>
+      <BattleMusic 
+        src="/assets/music/luthien-vs-sauron.mp3" 
+        battleState={battleState}
+      />
+      <BattleSystem {...luthienConfig} />
+    </>
+  );
 };
 
 export default BattleLuthien;

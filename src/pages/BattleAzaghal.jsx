@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BattleSystem from '../components/BattleSystem';
+import BattleMusic from '../components/BattleMusic';
 
 const BattleAzaghal = () => {
+  const [battleState, setBattleState] = useState('start');
+  
   const azaghalConfig = {
     character: "Azaghal",
     enemyName: "Glaurung",
@@ -20,10 +23,19 @@ const BattleAzaghal = () => {
         damage: [20, 30],
         cooldown: 5
       }
-    ]
+    ],
+    onBattleStateChange: (state) => setBattleState(state)
   };
 
-  return <BattleSystem {...azaghalConfig} />;
+  return (
+    <>
+      <BattleMusic 
+        src="/assets/music/dwarf-battle.mp3" 
+        battleState={battleState}
+      />
+      <BattleSystem {...azaghalConfig} />
+    </>
+  );
 };
 
 export default BattleAzaghal;

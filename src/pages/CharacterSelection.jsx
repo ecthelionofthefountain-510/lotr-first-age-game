@@ -5,6 +5,7 @@ import { CharacterProgressIndicator } from '../components/ProgressSystem';
 import './CharacterSelection.css';
 
 const characters = [
+  { name: "Fëanor", image: "/assets/characters/Feanor.jpg" },  // Add this line
   { name: "Fingolfin", image: "/assets/characters/Fingolfin2.png" },
   { name: "Azaghal", image: "/assets/characters/Azaghal.png" },
   { name: "Húrin", image: "/assets/characters/Hurin3.png" },
