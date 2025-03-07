@@ -1,0 +1,47 @@
+.story-audio {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden-audio {
+  display: none;
+}
+
+.story-audio-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Uncial Antiqua', serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.story-audio-toggle:hover {
+  background: rgba(30, 30, 30, 0.8);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.audio-icon {
+  font-size: 1.2rem;
+}
+
+.story-audio-toggle:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .audio-text {
+    display: none;
+  }
+  
+  .story-audio-toggle {
+    padding: 8px;
+  }
+}

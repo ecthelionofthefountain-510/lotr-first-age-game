@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import useGameStore from '../store/gameStore';
 import storyData from '../data/story';
 import './GamePage.css';
 import { useNavigate } from 'react-router-dom';
+import StoryAudio from '../components/StoryAudio';
+import '../components/StoryAudio.css';
+
+// Definiera speciella scener som har berättarröst
+const AUDIO_SCENES = {
+  "Tirion Square": "/assets/music/The Oath of Fëanor.mp3"
+};
 
 const GamePage = () => {
   const { 
@@ -16,6 +23,9 @@ const GamePage = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [history, setHistory] = useState([]);
   const [choices, setChoices] = useState([]);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  const [showAudioControls, setShowAudioControls] = useState(false);
+  const audioRef = useRef(null);
   const navigate = useNavigate();
   
   if (!currentCharacter || !characterProgress[currentCharacter]) {
@@ -26,11 +36,25 @@ const GamePage = () => {
   const chapters = storyData[currentCharacter] || [];
   const chapter = chapters[progress] || { text: "The story continues...", image: "", choices: [] };
 
+  // Kontrollera om den aktuella scenen har berättarröst
+  const hasAudio = AUDIO_SCENES[location] !== undefined;
+
+  // Reset när karaktären ändras
   useEffect(() => {
-    // Återställ val när karaktären ändras
     setChoices(characterProgress[currentCharacter]?.choices || []);
   }, [currentCharacter]);
 
+  // När location ändras
+  useEffect(() => {
+    // Om vi kommer till en scen med ljud, markera att uppspelning bör starta
+    if (hasAudio) {
+      console.log("Location changed to scene with audio:", location);
+      setIsAudioPlaying(true);
+      setShowAudioControls(false);
+    }
+  }, [location, hasAudio]);
+
+  // Textanimation
   useEffect(() => {
     let index = 0;
     let text = chapter.text;
@@ -47,11 +71,14 @@ const GamePage = () => {
       if (index >= text.length) {
         clearInterval(interval);
         setIsTyping(false);
+        if (hasAudio) {
+          setShowAudioControls(true); // Visa kontrollerna när texten är klar
+        }
       }
     }, 50);
 
     return () => clearInterval(interval);
-  }, [progress]);
+  }, [progress, chapter.text, hasAudio]);
 
   const handleNext = (nextIndex, choiceText = null) => {
     // Spara nuvarande steg och val i historiken
@@ -118,6 +145,14 @@ const GamePage = () => {
     navigate('/character-selection');
   };
 
+  const handleAudioPlayStateChange = (isPlaying) => {
+    setIsAudioPlaying(isPlaying);
+  };
+
+  const toggleAudio = () => {
+    setIsAudioPlaying(!isAudioPlaying);
+  };
+
   return (
     <div className="game-container">
       <div className="story-box">
@@ -145,6 +180,20 @@ const GamePage = () => {
           </div>
           <h2 className="location-name">{location}</h2>
           <p className="story-text">{displayedText}</p>
+          
+          {/* Ljudspelare */}
+          {hasAudio && (
+            <>
+              {/* Alltid ladda ljudspelaren */}
+              <StoryAudio 
+                audioPath={AUDIO_SCENES[location]} 
+                autoPlay={true}
+                visibleControls={showAudioControls}
+                onPlayStateChange={handleAudioPlayStateChange}
+              />
+            </>
+          )}
+          
           <div className="choice-buttons">
             {!isTyping && (
               chapter.choices?.length > 0 ? (

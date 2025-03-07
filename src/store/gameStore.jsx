@@ -45,15 +45,25 @@ const useGameStore = create(
         }
       })),
 
-      resetProgress: (char = null) => set((state) => ({
-        characterProgress: char 
-          ? Object.fromEntries(
-              Object.entries(state.characterProgress)
-                .filter(([key]) => key !== char)
-            )
-          : {},
-        currentCharacter: char ? state.currentCharacter : null
-      })),
+      resetProgress: (char = null) => set((state) => {
+        // If a specific character is provided, reset only that character
+        if (char) {
+          const updatedProgress = { ...state.characterProgress };
+          delete updatedProgress[char];
+          
+          return {
+            characterProgress: updatedProgress,
+            // Update current character if the reset character is the current one
+            currentCharacter: state.currentCharacter === char ? null : state.currentCharacter
+          };
+        }
+        
+        // Otherwise reset all progress
+        return {
+          characterProgress: {},
+          currentCharacter: null
+        };
+      }),
 
       getLastPlayedCharacter: () => {
         const progress = useGameStore.getState().characterProgress;
