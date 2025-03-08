@@ -10,26 +10,30 @@ const StoryAudio = ({
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const hasInitializedRef = useRef(false);
-
+  const [isAudioLoaded, setIsAudioLoaded] = useState(false);
   
   // This effect handles the initial setup when component mounts or audioPath changes
   useEffect(() => {
     if (audioRef.current && audioPath) {
       // Reset playing state when path changes
       hasInitializedRef.current = false;
+      setIsAudioLoaded(false);
       
       // Set up the audio element
       const audioElement = audioRef.current;
       audioElement.volume = 0.7;
-      audioElement.load(); // Explicitly load the audio
       
-      // Set up event listeners for the audio element
-      const handleCanPlay = () => {
+      // Define event handlers for logging and debugging
+      const handleCanPlayThrough = () => {
         console.log("Audio can play now:", audioPath);
+        setIsAudioLoaded(true);
+        
         if (autoPlay && !hasInitializedRef.current) {
           hasInitializedRef.current = true;
           try {
+            console.log("Attempting to autoplay");
             const playPromise = audioElement.play();
+            
             if (playPromise !== undefined) {
               playPromise
                 .then(() => {
@@ -49,12 +53,21 @@ const StoryAudio = ({
         }
       };
       
+      const handleError = (e) => {
+        console.error("Audio error:", e);
+      };
+      
       // Add event listeners
-      audioElement.addEventListener('canplaythrough', handleCanPlay);
+      audioElement.addEventListener('canplaythrough', handleCanPlayThrough);
+      audioElement.addEventListener('error', handleError);
+      
+      // Force the audio to load
+      audioElement.load();
       
       return () => {
         // Clean up event listeners
-        audioElement.removeEventListener('canplaythrough', handleCanPlay);
+        audioElement.removeEventListener('canplaythrough', handleCanPlayThrough);
+        audioElement.removeEventListener('error', handleError);
         audioElement.pause();
       };
     }
@@ -63,10 +76,11 @@ const StoryAudio = ({
   // This effect handles changes to the isPlaying state
   useEffect(() => {
     const audioElement = audioRef.current;
-    if (!audioElement) return;
+    if (!audioElement || !isAudioLoaded) return;
     
     if (isPlaying) {
       try {
+        console.log("Playing audio");
         const playPromise = audioElement.play();
         if (playPromise !== undefined) {
           playPromise.catch(error => {
@@ -79,13 +93,14 @@ const StoryAudio = ({
         setIsPlaying(false);
       }
     } else {
+      console.log("Pausing audio");
       audioElement.pause();
     }
     
     if (onPlayStateChange) {
       onPlayStateChange(isPlaying);
     }
-  }, [isPlaying, onPlayStateChange]);
+  }, [isPlaying, onPlayStateChange, isAudioLoaded]);
 
   const togglePlay = () => {
     console.log("Toggle play clicked, current state:", isPlaying);
@@ -94,6 +109,7 @@ const StoryAudio = ({
 
   return (
     <div className={`story-audio ${!visibleControls ? 'hidden-audio' : ''}`}>
+      {/* Add the audio with preload to ensure it starts loading immediately */}
       <audio 
         ref={audioRef} 
         src={audioPath} 
@@ -103,7 +119,7 @@ const StoryAudio = ({
       {visibleControls && (
         <button 
           onClick={togglePlay}
-          className="story-audio-toggle"
+          className={`story-audio-toggle ${!isPlaying && isAudioLoaded ? 'play-needed' : ''}`}
           title={isPlaying ? "Pausa berättarröst" : "Spela berättarröst"}
         >
           <span className="audio-icon">{isPlaying ? "🔊" : "🔇"}</span>

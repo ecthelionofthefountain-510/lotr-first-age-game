@@ -1,5 +1,4 @@
-// In GamePage.jsx, update the AUDIO_SCENES to ensure it matches Fëanor's story location exactly
-// And improve audio initialization logic
+// GamePage.jsx with fixes for audio playback
 
 import React, { useState, useEffect, useRef } from 'react';
 import useGameStore from '../store/gameStore';
@@ -9,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import StoryAudio from '../components/StoryAudio';
 import '../components/StoryAudio.css';
 
+// Fixed mapping - ensure exact match for Fëanor's "Tirion Square" location
 const AUDIO_SCENES = {
   "Tirion Square": "/assets/music/The Oath of Feanor.mp3"
 };
@@ -29,7 +29,7 @@ const GamePage = () => {
   const [showAudioControls, setShowAudioControls] = useState(false);
   const [currentAudio, setCurrentAudio] = useState(null);
   const audioRef = useRef(null);
-  const intervalRef = useRef(null); // Ref för typningsintervallet
+  const intervalRef = useRef(null);
   const navigate = useNavigate();
   
   if (!currentCharacter || !characterProgress[currentCharacter]) {
@@ -40,6 +40,7 @@ const GamePage = () => {
   const chapters = storyData[currentCharacter] || [];
   const chapter = chapters[progress] || { text: "The story continues...", image: "", choices: [] };
 
+  // Improved audio detection: Check if the current location has an associated audio file
   const hasAudio = AUDIO_SCENES[location] !== undefined;
 
   // Initialize the audio path based on the current location
@@ -49,9 +50,14 @@ const GamePage = () => {
       console.log("Audio path:", AUDIO_SCENES[location]);
       setCurrentAudio(AUDIO_SCENES[location]);
       setIsAudioPlaying(true);
-      setShowAudioControls(true);
+      
+      // For Tirion Square, show audio controls immediately
+      if (location === "Tirion Square") {
+        setShowAudioControls(true);
+      }
     } else {
       setCurrentAudio(null);
+      setShowAudioControls(false);
     }
   }, [location, hasAudio]);
 
@@ -59,8 +65,19 @@ const GamePage = () => {
     setChoices(characterProgress[currentCharacter]?.choices || []);
   }, [currentCharacter]);
 
-  // Typningsanimation med lagrad interval-ID i en ref
+  // Typing animation - but skip for Tirion Square
   useEffect(() => {
+    // For Tirion Square location, display text immediately and play audio
+    if (location === "Tirion Square") {
+      setDisplayedText(chapter.text);
+      setIsTyping(false);
+      if (hasAudio) {
+        setShowAudioControls(true);
+      }
+      return;
+    }
+    
+    // Normal typing animation for other locations
     let index = 0;
     const text = chapter.text;
     let updatedText = "";
@@ -76,6 +93,7 @@ const GamePage = () => {
       if (index >= text.length) {
         clearInterval(intervalRef.current);
         setIsTyping(false);
+        // Show audio controls after text is fully displayed
         if (hasAudio) {
           setShowAudioControls(true);
         }
@@ -83,9 +101,9 @@ const GamePage = () => {
     }, 50);
 
     return () => clearInterval(intervalRef.current);
-  }, [progress, chapter.text, hasAudio]);
+  }, [progress, chapter.text, hasAudio, location]);
 
-  // Funktion som hanterar att "hoppa över" typningen om texten inte är färdig
+  // Skip typing or proceed to next
   const handleSkipOrNext = (nextIndex, choiceText = null) => {
     if (isTyping) {
       clearInterval(intervalRef.current);
@@ -191,6 +209,7 @@ const GamePage = () => {
           <h2 className="location-name">{location}</h2>
           <p className="story-text">{displayedText}</p>
           
+          {/* Make sure StoryAudio component is rendered only when needed */}
           {currentAudio && (
             <StoryAudio 
               audioPath={currentAudio} 
