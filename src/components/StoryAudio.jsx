@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import './StoryAudio.css';
 
 const StoryAudio = ({ 
   audioPath, 
@@ -9,87 +10,95 @@ const StoryAudio = ({
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const hasInitializedRef = useRef(false);
+
   
-  // Spela ljud vid första renderingen om det inte redan har startats
+  // This effect handles the initial setup when component mounts or audioPath changes
   useEffect(() => {
-    const audioElement = audioRef.current;
-    
-    if (audioElement && autoPlay && !hasInitializedRef.current) {
-      // Markera att initialisering har skett för att undvika att spela om ljudet
-      hasInitializedRef.current = true;
+    if (audioRef.current && audioPath) {
+      // Reset playing state when path changes
+      hasInitializedRef.current = false;
       
-      // Sätt volym och andra egenskaper
+      // Set up the audio element
+      const audioElement = audioRef.current;
       audioElement.volume = 0.7;
+      audioElement.load(); // Explicitly load the audio
       
-      // Kort fördröjning för att säkerställa att ljudet laddats
-      const timer = setTimeout(() => {
-        console.log("Attempting to play audio:", audioPath);
-        const playPromise = audioElement.play();
-        
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log("Audio playing successfully");
-              setIsPlaying(true);
-              if (onPlayStateChange) {
-                onPlayStateChange(true);
-              }
-            })
-            .catch(error => {
-              console.log("Autoplay prevented:", error);
-              setIsPlaying(false);
-              if (onPlayStateChange) {
-                onPlayStateChange(false);
-              }
-            });
+      // Set up event listeners for the audio element
+      const handleCanPlay = () => {
+        console.log("Audio can play now:", audioPath);
+        if (autoPlay && !hasInitializedRef.current) {
+          hasInitializedRef.current = true;
+          try {
+            const playPromise = audioElement.play();
+            if (playPromise !== undefined) {
+              playPromise
+                .then(() => {
+                  console.log("Autoplay successful");
+                  setIsPlaying(true);
+                  if (onPlayStateChange) onPlayStateChange(true);
+                })
+                .catch(error => {
+                  console.error("Autoplay prevented:", error);
+                  setIsPlaying(false);
+                  if (onPlayStateChange) onPlayStateChange(false);
+                });
+            }
+          } catch (error) {
+            console.error("Play attempt error:", error);
+          }
         }
-      }, 100);
+      };
       
-      return () => clearTimeout(timer);
-    }
-    
-    // Städa upp när komponenten avmonteras
-    return () => {
-      if (audioElement) {
+      // Add event listeners
+      audioElement.addEventListener('canplaythrough', handleCanPlay);
+      
+      return () => {
+        // Clean up event listeners
+        audioElement.removeEventListener('canplaythrough', handleCanPlay);
         audioElement.pause();
-      }
-    };
-  }, [audioPath]); // Körs endast när ljudsökvägen ändras
+      };
+    }
+  }, [audioPath, autoPlay, onPlayStateChange]);
   
-  // Håll ljudstatus synkroniserad med isPlaying
+  // This effect handles changes to the isPlaying state
   useEffect(() => {
     const audioElement = audioRef.current;
+    if (!audioElement) return;
     
-    if (audioElement) {
-      if (isPlaying) {
+    if (isPlaying) {
+      try {
         const playPromise = audioElement.play();
-        
         if (playPromise !== undefined) {
           playPromise.catch(error => {
-            console.log("Play error:", error);
+            console.error("Play error from state change:", error);
             setIsPlaying(false);
           });
         }
-      } else {
-        audioElement.pause();
+      } catch (error) {
+        console.error("Play attempt error from state change:", error);
+        setIsPlaying(false);
       }
-      
-      // Meddela parent-komponenten om spelstatus
-      if (onPlayStateChange) {
-        onPlayStateChange(isPlaying);
-      }
+    } else {
+      audioElement.pause();
+    }
+    
+    if (onPlayStateChange) {
+      onPlayStateChange(isPlaying);
     }
   }, [isPlaying, onPlayStateChange]);
 
   const togglePlay = () => {
-    console.log("Toggle play, current state:", isPlaying);
-    setIsPlaying(!isPlaying);
+    console.log("Toggle play clicked, current state:", isPlaying);
+    setIsPlaying(prevState => !prevState);
   };
 
-  // Samma ljudelement återanvänds oavsett om kontroller visas eller inte
   return (
     <div className={`story-audio ${!visibleControls ? 'hidden-audio' : ''}`}>
-      <audio ref={audioRef} src={audioPath} preload="auto" />
+      <audio 
+        ref={audioRef} 
+        src={audioPath} 
+        preload="auto"
+      />
       
       {visibleControls && (
         <button 

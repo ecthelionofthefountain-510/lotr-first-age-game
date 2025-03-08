@@ -1,3 +1,6 @@
+// In GamePage.jsx, update the AUDIO_SCENES to ensure it matches Fëanor's story location exactly
+// And improve audio initialization logic
+
 import React, { useState, useEffect, useRef } from 'react';
 import useGameStore from '../store/gameStore';
 import storyData from '../data/story';
@@ -7,7 +10,7 @@ import StoryAudio from '../components/StoryAudio';
 import '../components/StoryAudio.css';
 
 const AUDIO_SCENES = {
-  "Tirion Square": "/assets/music/The Oath of Fëanor.mp3"
+  "Tirion Square": "/assets/music/The Oath of Feanor.mp3"
 };
 
 const GamePage = () => {
@@ -24,6 +27,7 @@ const GamePage = () => {
   const [choices, setChoices] = useState([]);
   const [isAudioPlaying, setIsAudioPlaying] = useState(true);
   const [showAudioControls, setShowAudioControls] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState(null);
   const audioRef = useRef(null);
   const intervalRef = useRef(null); // Ref för typningsintervallet
   const navigate = useNavigate();
@@ -38,17 +42,22 @@ const GamePage = () => {
 
   const hasAudio = AUDIO_SCENES[location] !== undefined;
 
+  // Initialize the audio path based on the current location
+  useEffect(() => {
+    if (hasAudio) {
+      console.log("Location with audio detected:", location);
+      console.log("Audio path:", AUDIO_SCENES[location]);
+      setCurrentAudio(AUDIO_SCENES[location]);
+      setIsAudioPlaying(true);
+      setShowAudioControls(true);
+    } else {
+      setCurrentAudio(null);
+    }
+  }, [location, hasAudio]);
+
   useEffect(() => {
     setChoices(characterProgress[currentCharacter]?.choices || []);
   }, [currentCharacter]);
-
-  useEffect(() => {
-    if (hasAudio) {
-      console.log("Location changed to scene with audio:", location);
-      setIsAudioPlaying(true);
-      setShowAudioControls(false);
-    }
-  }, [location, hasAudio]);
 
   // Typningsanimation med lagrad interval-ID i en ref
   useEffect(() => {
@@ -85,8 +94,6 @@ const GamePage = () => {
       if (hasAudio) {
         setShowAudioControls(true);
       }
-      // Om du vill kräva ett andra klick för att faktiskt gå vidare, kan du returnera här
-      // return;
     } else {
       handleNext(nextIndex, choiceText);
     }
@@ -153,10 +160,7 @@ const GamePage = () => {
 
   const handleAudioPlayStateChange = (isPlaying) => {
     setIsAudioPlaying(isPlaying);
-  };
-
-  const toggleAudio = () => {
-    setIsAudioPlaying(!isAudioPlaying);
+    console.log("Audio play state changed:", isPlaying);
   };
 
   return (
@@ -187,9 +191,9 @@ const GamePage = () => {
           <h2 className="location-name">{location}</h2>
           <p className="story-text">{displayedText}</p>
           
-          {hasAudio && (
+          {currentAudio && (
             <StoryAudio 
-              audioPath={AUDIO_SCENES[location]} 
+              audioPath={currentAudio} 
               autoPlay={true}
               visibleControls={showAudioControls}
               onPlayStateChange={handleAudioPlayStateChange}

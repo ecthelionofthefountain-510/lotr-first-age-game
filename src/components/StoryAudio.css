@@ -23,9 +23,23 @@
   transition: all 0.3s ease;
 }
 
+/* Pulsera knappen när ljud är redo att spelas */
+.story-audio-toggle.play-needed {
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+  background: rgba(30, 30, 30, 0.9);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
 .story-audio-toggle:hover {
   background: rgba(30, 30, 30, 0.8);
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  transform: scale(1.05);
 }
 
 .audio-icon {
