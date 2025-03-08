@@ -1,4 +1,4 @@
-// GamePage.jsx with fixes for audio playback
+// Complete updated GamePage.jsx with enhancements for the Oath of Fëanor scene
 
 import React, { useState, useEffect, useRef } from 'react';
 import useGameStore from '../store/gameStore';
@@ -25,7 +25,7 @@ const GamePage = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [history, setHistory] = useState([]);
   const [choices, setChoices] = useState([]);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true); // Set to true to start unmuted
   const [showAudioControls, setShowAudioControls] = useState(false);
   const [currentAudio, setCurrentAudio] = useState(null);
   const audioRef = useRef(null);
@@ -39,6 +39,9 @@ const GamePage = () => {
   const { location, progress } = characterProgress[currentCharacter];
   const chapters = storyData[currentCharacter] || [];
   const chapter = chapters[progress] || { text: "The story continues...", image: "", choices: [] };
+
+  // Check if we're on the Oath of Fëanor scene
+  const isOathScene = location === "Tirion Square";
 
   // Improved audio detection: Check if the current location has an associated audio file
   const hasAudio = AUDIO_SCENES[location] !== undefined;
@@ -181,9 +184,31 @@ const GamePage = () => {
     console.log("Audio play state changed:", isPlaying);
   };
 
+  useEffect(() => {
+    if (location === "Tirion Square" && chapter.text) {
+      console.log("FAILSAFE: Setting text for Tirion Square");
+      setTimeout(() => {
+        setDisplayedText(chapter.text);
+      }, 100);
+    }
+  }, [location, chapter.text]);
+
   return (
-    <div className="game-container">
-      <div className="story-box">
+    <div className={`game-container ${isOathScene ? 'oath-scene-container' : ''}`}>
+      <div className={`story-box ${isOathScene ? 'oath-scene' : ''}`}>
+        {/* Add oath scene special effects if we're on that scene */}
+        {isOathScene && (
+          <>
+            <div className="oath-darkening-overlay"></div>
+            <div className="oath-torchlight"></div>
+            <div className="oath-silmaril-glow"></div>
+            <div className="oath-raised-swords"></div>
+            <div className="oath-morgoth-shadow"></div>
+            <div className="oath-smoke-effect"></div>
+            <div className="oath-lightning"></div>
+          </>
+        )}
+      
         {chapter.image && <img src={chapter.image} alt={location} className="story-image fade-in" />}
         <div className="story-content">
           <div className="story-header">
@@ -207,7 +232,10 @@ const GamePage = () => {
             </div>
           </div>
           <h2 className="location-name">{location}</h2>
-          <p className="story-text">{displayedText}</p>
+          {/* Add special class to the oath text */}
+          <p className={`story-text ${isOathScene ? 'oath-text' : ''}`}>
+  {displayedText || (isOathScene ? chapter.text : "")}
+</p>
           
           {/* Make sure StoryAudio component is rendered only when needed */}
           {currentAudio && (

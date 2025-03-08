@@ -72,7 +72,6 @@ h2.location-name {
 }
 
 
-
 .next-button {
   background: #d4af37;
   color: black;
@@ -166,3 +165,158 @@ h2.location-name {
 .choice-buttons button {
   animation: fadeInButtons 0.5s ease-in-out forwards;
 }
+
+/* Enhanced Oath of Fëanor Scene Styles */
+
+/* Add this to your existing CSS */
+.oath-scene-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay with red tint for the entire scene */
+.oath-darkening-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(50, 0, 0, 0.8));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Torchlight glow effect */
+.oath-torchlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 150, 50, 0.2) 0%,
+    rgba(255, 80, 0, 0.1) 40%,
+    transparent 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Silmaril glow in Fëanor's hand */
+.oath-silmaril-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 220, 180, 0.8) 20%,
+    rgba(255, 150, 50, 0.4) 40%,
+    transparent 70%
+  );
+  z-index: 3;
+  filter: blur(5px);
+  animation: silmarilPulse 4s infinite alternate;
+  pointer-events: none;
+}
+
+/* Raised swords effect */
+.oath-raised-swords {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/oath-swords-overlay.png'); /* Create this image or use CSS */
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.7;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Morgoth's shadow looming effect */
+.oath-morgoth-shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+  clip-path: polygon(100% 0, 100% 100%, 20% 100%, 50% 0);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Smoke effect for burned ships foreshadowing */
+.oath-smoke-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(50, 50, 50, 0.4), transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Lightning effect for dramatic emphasis */
+.oath-lightning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, transparent 95%, rgba(255, 255, 255, 0.8) 100%);
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+  animation: lightningFlash 8s infinite;
+}
+
+/* Animation for the silmaril glow pulsing effect */
+@keyframes silmarilPulse {
+  0% {
+    opacity: 0.7;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.9), 0 0 120px rgba(255, 220, 180, 0.5);
+  }
+}
+
+/* Animation for occasional lightning flash */
+@keyframes lightningFlash {
+  0%, 95%, 98%, 100% {
+    opacity: 0;
+  }
+  96%, 97% {
+    opacity: 0.3;
+  }
+}
+
+/* Make the story box have a dark, blood-red border for this scene only */
+.story-box.oath-scene {
+  border-color: #8B0000;
+  box-shadow: 0px 0px 20px rgba(139, 0, 0, 0.7);
+}
+
+/* Make the oath text more dramatic */
+.oath-text {
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 100, 0, 0.6);
+  animation: oathTextPulse 3s infinite alternate;
+}
+
+@keyframes oathTextPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 100, 0, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 100, 0, 0.8);
+  }
+}
+
