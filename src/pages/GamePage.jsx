@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import StoryAudio from '../components/StoryAudio';
 import '../components/StoryAudio.css';
 
-// Definiera speciella scener som har berättarröst
 const AUDIO_SCENES = {
   "Tirion Square": "/assets/music/The Oath of Fëanor.mp3"
 };
@@ -26,6 +25,7 @@ const GamePage = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(true);
   const [showAudioControls, setShowAudioControls] = useState(false);
   const audioRef = useRef(null);
+  const intervalRef = useRef(null); // Ref för typningsintervallet
   const navigate = useNavigate();
   
   if (!currentCharacter || !characterProgress[currentCharacter]) {
@@ -36,17 +36,13 @@ const GamePage = () => {
   const chapters = storyData[currentCharacter] || [];
   const chapter = chapters[progress] || { text: "The story continues...", image: "", choices: [] };
 
-  // Kontrollera om den aktuella scenen har berättarröst
   const hasAudio = AUDIO_SCENES[location] !== undefined;
 
-  // Reset när karaktären ändras
   useEffect(() => {
     setChoices(characterProgress[currentCharacter]?.choices || []);
   }, [currentCharacter]);
 
-  // När location ändras
   useEffect(() => {
-    // Om vi kommer till en scen med ljud, markera att uppspelning bör starta
     if (hasAudio) {
       console.log("Location changed to scene with audio:", location);
       setIsAudioPlaying(true);
@@ -54,34 +50,49 @@ const GamePage = () => {
     }
   }, [location, hasAudio]);
 
-  // Textanimation
+  // Typningsanimation med lagrad interval-ID i en ref
   useEffect(() => {
     let index = 0;
-    let text = chapter.text;
+    const text = chapter.text;
     let updatedText = "";
 
     setDisplayedText("");
     setIsTyping(true);
 
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       updatedText += text[index];
       setDisplayedText(updatedText); 
       index++;
 
       if (index >= text.length) {
-        clearInterval(interval);
+        clearInterval(intervalRef.current);
         setIsTyping(false);
         if (hasAudio) {
-          setShowAudioControls(true); // Visa kontrollerna när texten är klar
+          setShowAudioControls(true);
         }
       }
     }, 50);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalRef.current);
   }, [progress, chapter.text, hasAudio]);
 
+  // Funktion som hanterar att "hoppa över" typningen om texten inte är färdig
+  const handleSkipOrNext = (nextIndex, choiceText = null) => {
+    if (isTyping) {
+      clearInterval(intervalRef.current);
+      setDisplayedText(chapter.text);
+      setIsTyping(false);
+      if (hasAudio) {
+        setShowAudioControls(true);
+      }
+      // Om du vill kräva ett andra klick för att faktiskt gå vidare, kan du returnera här
+      // return;
+    } else {
+      handleNext(nextIndex, choiceText);
+    }
+  };
+
   const handleNext = (nextIndex, choiceText = null) => {
-    // Spara nuvarande steg och val i historiken
     const currentStep = {
       location,
       progress,
@@ -89,7 +100,6 @@ const GamePage = () => {
     };
     setHistory(prev => [...prev, currentStep]);
     
-    // Uppdatera valhistoriken om ett val gjordes
     if (choiceText) {
       const newChoices = [...choices, { text: choiceText, location }];
       setChoices(newChoices);
@@ -99,13 +109,11 @@ const GamePage = () => {
       if (nextIndex.startsWith("battle-")) {
         navigate(`/${nextIndex}`);
       } else if (nextIndex.startsWith("end-")) {
-        // Markera berättelsen som avslutad innan navigering till slutet
         markStoryComplete(currentCharacter);
         navigate(`/${nextIndex}`);
       }
     } else if (nextIndex !== undefined) {
       const nextChapter = chapters[nextIndex];
-      // Kontrollera om detta är sista kapitlet
       const isLastChapter = nextIndex === chapters.length - 1;
       
       saveProgress(
@@ -115,7 +123,6 @@ const GamePage = () => {
         choices
       );
 
-      // Om det är sista kapitlet och det inte finns fler val
       if (isLastChapter && (!nextChapter.choices || nextChapter.choices.length === 0)) {
         markStoryComplete(currentCharacter);
       }
@@ -127,7 +134,6 @@ const GamePage = () => {
       const prevStep = history[history.length - 1];
       setHistory(prev => prev.slice(0, -1));
       
-      // Om det tidigare steget innehöll ett val, ta bort det från valhistoriken
       if (prevStep.choice) {
         setChoices(prev => prev.slice(0, -1));
       }
@@ -181,39 +187,33 @@ const GamePage = () => {
           <h2 className="location-name">{location}</h2>
           <p className="story-text">{displayedText}</p>
           
-          {/* Ljudspelare */}
           {hasAudio && (
-            <>
-              {/* Alltid ladda ljudspelaren */}
-              <StoryAudio 
-                audioPath={AUDIO_SCENES[location]} 
-                autoPlay={true}
-                visibleControls={showAudioControls}
-                onPlayStateChange={handleAudioPlayStateChange}
-              />
-            </>
+            <StoryAudio 
+              audioPath={AUDIO_SCENES[location]} 
+              autoPlay={true}
+              visibleControls={showAudioControls}
+              onPlayStateChange={handleAudioPlayStateChange}
+            />
           )}
           
           <div className="choice-buttons">
-            {!isTyping && (
-              chapter.choices?.length > 0 ? (
-                chapter.choices.map((choice, index) => (
-                  <button 
-                    key={index} 
-                    className="next-button" 
-                    onClick={() => handleNext(choice.next, choice.text)}
-                  >
-                    {choice.text}
-                  </button>
-                ))
-              ) : (
+            {chapter.choices?.length > 0 ? (
+              chapter.choices.map((choice, index) => (
                 <button 
+                  key={index} 
                   className="next-button" 
-                  onClick={() => handleNext(progress + 1)}
+                  onClick={() => handleSkipOrNext(choice.next, choice.text)}
                 >
-                  Continue →
+                  {choice.text}
                 </button>
-              )
+              ))
+            ) : (
+              <button 
+                className="next-button" 
+                onClick={() => handleSkipOrNext(progress + 1)}
+              >
+                Continue →
+              </button>
             )}
           </div>
         </div>

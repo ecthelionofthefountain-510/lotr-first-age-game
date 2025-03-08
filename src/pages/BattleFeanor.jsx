@@ -10,8 +10,8 @@ const BattleFeanor = () => {
     enemyName: "Balrogs",
     playerDamageRange: [10, 20],
     enemyDamageRange: [15, 25],
-    playerImage: "/assets/characters/Feanor.png",
-    enemyImage: "/assets/characters/Balrogs.png",
+    playerImage: "/assets/battle/battle-feanor.jpg",
+    enemyImage: "/assets/battle/battle-balrog.jpg",
     specialMoves: [
       {
         name: "Spirit of Fire",
