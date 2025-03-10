@@ -258,7 +258,7 @@ const storyData = {
       image: "/assets/story-scenes/beren-luthien-huan-escape.png",
       choices: []
     }
-],
+  ],
   Thingol: [
     { location: "Menegroth", text: "Thingol styr över Doriath från sin gyllene sal.", image: "/assets/locations/Menegroth.png" },
     { location: "Doriath", text: "Thingol förkastar dvärgarnas krav och skapar konflikt.", image: "/assets/locations/Doriath.png" },
@@ -373,6 +373,132 @@ const storyData = {
     image: "/assets/story-scenes/noldor-mithrim.jpg",
     choices: [
       { text: "Fight Morgoth's forces", next: "battle-feanor" }
+    ]
+  }
+  ],
+  Melian: [
+  {
+    location: "Gardens of Lórien",
+    text: "Among the gardens of Lórien in Valinor, you, Melian, sing in the twilight. Your voice carries the wisdom of the Ainur and the beauty of Arda's first music. The Valar cherish your songs, but there is a yearning in your heart to see the wider world.",
+    image: "/assets/story-scenes/melian-lorien.jpg",
+    choices: [
+      { text: "Explore the shores of Middle-earth", next: 1 },
+      { text: "Remain in the service of Irmo", next: 2 }
+    ]
+  },
+  {
+    location: "Nan Elmoth",
+    text: "In the starlit forests of Nan Elmoth, your song fills the night air. The nightingales gather around you, their voices joining yours. Suddenly, a figure emerges from the shadows—Elwë, lord of the Teleri, drawn by your enchanting melody. Time stands still as your eyes meet.",
+    image: "/assets/story-scenes/melian-nan-elmoth.jpg",
+    choices: [
+      { text: "Approach the elven lord", next: 3 }
+    ]
+  },
+  {
+    location: "Halls of Ilmarin",
+    text: "You remain in Valinor, serving in the gardens of Lórien. The years pass in bliss under the light of the Two Trees, yet dreams often come to you of unwalked shores and unsung songs. Until one day, a summons arrives from Manwë himself.",
+    image: "/assets/story-scenes/melian-halls-of-illmarin.jpg",
+    choices: [
+      { text: "Answer the summons", next: 4 }
+    ]
+  },
+  {
+    location: "First Meeting",
+    text: "You approach Elwë, your divine light softened to not overwhelm him. For days that stretch into years, you both stand transfixed, wrapped in love's first embrace. When you finally awaken from this trance, the world has changed—his people have mostly departed West without him.",
+    image: "/assets/story-scenes/melian-thingol-meeting.jpg",
+    choices: [
+      { text: "Stay with Elwë in Middle-earth", next: 5 }
+    ]
+  },
+  {
+    location: "Halls of Manwë",
+    text: "In the highest halls of Taniquetil, Manwë speaks of a purpose for you beyond Valinor. 'The Children of Ilúvatar will need guidance,' he says. 'And you, Melian, might find what your heart seeks in the eastern lands.' His words confirm what you have long felt.",
+    image: "/assets/locations/Halls-of-Manwe.jpg",
+    choices: [
+      { text: "Journey to Middle-earth", next: 1 }
+    ]
+  },
+  {
+    location: "Founding of Doriath",
+    text: "With Elwë—now called Thingol in the Sindarin tongue—you establish a realm in the great forests. Your wisdom and his leadership draw many of the Sindar to your protection. But darkness grows beyond your borders, and you foresee threats that will come.",
+    image: "/assets/locations/Doriath.png",
+    choices: [
+      { text: "Raise a girdle of enchantment", next: 6 },
+      { text: "Build strength through alliances", next: 7 }
+    ]
+  },
+  {
+    location: "The Girdle of Melian",
+    text: "Drawing upon your power as a Maia, you weave an enchantment around the borders of your realm—the Girdle of Melian. A maze of shadows and dreams that confounds all who would enter unbidden. Doriath becomes an island of safety in a darkening world.",
+    image: "/assets/locations/Girdle-of-Melian.jpg",
+    choices: [
+      { text: "Guide the realm from Menegroth", next: 8 }
+    ]
+  },
+  {
+    location: "Council with the Dwarves",
+    text: "Thingol forges an alliance with the Dwarves of Nogrod and Belegost. They bring their craft to help build the underground halls of Menegroth, the Thousand Caves. Their skill married with your vision creates a wonder of the age—carved in the likeness of forests above.",
+    image: "/assets/locations/Menegroth2.jpg",
+    choices: [
+      { text: "Oversee the completion of Menegroth", next: 8 }
+    ]
+  },
+  {
+    location: "Menegroth",
+    text: "From the Thousand Caves, you and Thingol rule Doriath. The years pass in relative peace behind your protective enchantment. A daughter is born to you—Lúthien, fairest of all the Children of Ilúvatar. But beyond your borders, Morgoth's shadow lengthens.",
+    image: "/assets/locations/Menegroth3.jpg",
+    choices: [
+      { text: "Counsel caution to Thingol", next: 9 },
+      { text: "Prepare Lúthien for her destiny", next: 10 }
+    ]
+  },
+  {
+    location: "Throne Room of Doriath",
+    text: "You advise Thingol against involvement in the wars of the Noldor, foreseeing much sorrow to come. 'Their pride will be their undoing,' you warn. Your husband heeds your counsel in part, but his own pride grows with his power, and he begins to covet treasures that will lead to ruin.",
+    image: "/assets/story-scenes/thingol-throne.jpg",
+    choices: [
+      { text: "Try to temper Thingol's pride", next: 11 }
+    ]
+  },
+  {
+    location: "Gardens of Menegroth",
+    text: "You watch Lúthien grow into her power, teaching her songs and enchantments. In secret, you glimpse fragments of her fate—a mortal love, a quest beyond hope, and a choice that will echo through the ages. You keep these visions close, knowing some paths must be walked alone.",
+    image: "/assets/story-scenes/melian-luthien.jpg",
+    choices: [
+      { text: "Trust in Lúthien's strength", next: 11 }
+    ]
+  },
+  {
+    location: "Chamber of Counsel",
+    text: "The Silmaril has come to Doriath, won by Beren and Lúthien at terrible cost. You perceive the doom it carries—the oath of Fëanor's sons will not be denied. 'Send it away,' you plead with Thingol. But the jewel has captured his heart, and he will not listen.",
+    image: "/assets/story-scenes/silmaril-melian.jpg",
+    choices: [
+      { text: "Accept that some fates cannot be changed", next: 12 }
+    ]
+  },
+  {
+    location: "Ruins of Menegroth",
+    text: "Thingol is slain, betrayed by the dwarven craftsmen he hired to set the Silmaril in the Nauglamír. Grief overwhelms you, and as your concentration falters, the Girdle of Melian begins to dissolve. The protection that has kept Doriath safe for centuries fades.",
+    image: "/assets/story-scenes/ruins-menegroth.jpg",
+    choices: [
+      { text: "Depart Middle-earth forever", next: 13 },
+      { text: "Seek out Lúthien one last time", next: 14 }
+    ]
+  },
+  {
+    location: "Shores of Valinor",
+    text: "Your time in Middle-earth is ended. You return to Valinor, bearing the wisdom and grief of centuries among the mortal lands. In the Gardens of Lórien, you sing once more, but your songs now carry the depths of love and loss that only experience could teach.",
+    image: "/assets/story-scenes/melian-valinor.jpg",
+    choices: [
+      { text: "Find peace in Valinor", next: "end-melian" }
+    ]
+  },
+  {
+    location: "Tol Galen",
+    text: "You find Lúthien and Beren living in mortal happiness on the green isle of Tol Galen. Though the shadow of mortality now lies upon your daughter, there is joy in her eyes. You embrace her one final time, imparting your last blessing before returning to Valinor alone.",
+    image: "/assets/story-scenes/melian-beren-luthien.jpg",
+    choices: [
+      { text: "Return to Valinor with memories to treasure", next: "end-melian" }
     ]
   }
 ]

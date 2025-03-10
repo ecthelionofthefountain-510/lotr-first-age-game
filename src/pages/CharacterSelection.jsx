@@ -10,6 +10,14 @@ const characters = [
   { name: "Azaghal", image: "/assets/characters/Azaghal.png" },
   { name: "Húrin", image: "/assets/characters/Hurin3.png" },
   { name: "Lúthien", image: "/assets/characters/Luthien.png" },
+  { name: "Beren", image: "/assets/characters/Beren.png" },
+  { name: "Eonwë", image: "/assets/characters/Eonwe.png" },
+  { name: "Ecthelion", image: "/assets/characters/Ecthelion.png" },
+  { name: "Túrin", image: "/assets/characters/Turin-Turambar.png" },
+  { name: "Tuor", image: "/assets/characters/Tuor.png" },
+  { name: "Thingol", image: "/assets/characters/Thingol.png" },
+  { name: "Melian", image: "/assets/characters/Melian.jpg" },
+  
 ];
 
 const CharacterSelection = () => {

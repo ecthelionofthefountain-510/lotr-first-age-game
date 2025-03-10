@@ -1,5 +1,4 @@
-// Complete updated GamePage.jsx with enhancements for the Oath of Fëanor scene
-
+// GamePage.jsx with consistent back button for all character pages
 import React, { useState, useEffect, useRef } from 'react';
 import useGameStore from '../store/gameStore';
 import storyData from '../data/story';
@@ -158,6 +157,7 @@ const GamePage = () => {
   };
 
   const handleBack = () => {
+    // If we have history, go back to the previous step
     if (history.length > 0) {
       const prevStep = history[history.length - 1];
       setHistory(prev => prev.slice(0, -1));
@@ -172,6 +172,9 @@ const GamePage = () => {
         prevStep.progress,
         choices.slice(0, -1)
       );
+    } else {
+      // If no history, just go back to character selection
+      navigate('/character-selection');
     }
   };
 
@@ -214,15 +217,14 @@ const GamePage = () => {
           <div className="story-header">
             <h1>{currentCharacter}'s Story</h1>
             <div className="navigation-buttons">
-              {history.length > 0 && (
-                <button 
-                  className="back-button" 
-                  onClick={handleBack}
-                  disabled={isTyping}
-                >
-                  ← Back
-                </button>
-              )}
+              {/* Always show back button - changed from conditional rendering */}
+              <button 
+                className="back-button" 
+                onClick={handleBack}
+                disabled={isTyping}
+              >
+                ← Back
+              </button>
               <button 
                 className="return-button" 
                 onClick={handleReturnToStart}
@@ -232,10 +234,9 @@ const GamePage = () => {
             </div>
           </div>
           <h2 className="location-name">{location}</h2>
-          {/* Add special class to the oath text */}
           <p className={`story-text ${isOathScene ? 'oath-text' : ''}`}>
-  {displayedText || (isOathScene ? chapter.text : "")}
-</p>
+            {displayedText || (isOathScene ? chapter.text : "")}
+          </p>
           
           {/* Make sure StoryAudio component is rendered only when needed */}
           {currentAudio && (
