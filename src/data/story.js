@@ -874,7 +874,7 @@ const storyData = {
       choices: []
     }
   ],
-  Eönwë: [
+  Eonwë: [
     {
       location: "Valinor",
       text: "Du är Eönwë, härold åt Manwë, Valars konung. I årtusenden har du tjänat i de skinande hallarna på Taniquetil, bärandes Vindarnas Herres ord till alla riken. En dag kallas du till Mahanaxars ring, där Valarna församlats för ett stort råd.",
