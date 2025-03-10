@@ -7,7 +7,6 @@ const MelianEnd = () => {
 
   return (
     <div className="end-container">
-      <BackButton to="/" />
       <h1>Melian's Return</h1>
       <img src="/assets/story-scenes/melian-valinor.jpg" alt="Melian returning to Valinor" className="end-image" />
       <p>With the death of Thingol and the fading of Doriath, Melian's time in Middle-earth comes to an end. The Girdle of Enchantment dissolves, and she departs the land she protected for ages.</p>
