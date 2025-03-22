@@ -1,0 +1,31 @@
+{
+  "difficulty": "medium",
+  "category": "Geography",
+  "questions": [
+    {
+      "question": "Which river flowed through the hidden city of Gondolin?",
+      "options": ["Sirion", "Narog", "Glithui", "Aros"],
+      "answer": "Sirion"
+    },
+    {
+      "question": "Which mountain guarded the secret entrance to Gondolin?",
+      "options": ["Thangorodrim", "Amon Rûdh", "Echoriath", "Himring"],
+      "answer": "Echoriath"
+    },
+    {
+      "question": "What region lay between Doriath and the River Sirion?",
+      "options": ["Brethil", "Nevrast", "Nan Elmoth", "Hithlum"],
+      "answer": "Brethil"
+    },
+    {
+      "question": "What body of water was closest to Nargothrond?",
+      "options": ["Lake Mithrim", "River Narog", "Bay of Balar", "Andram"],
+      "answer": "River Narog"
+    },
+    {
+      "question": "What was the name of the island at the Mouths of Sirion?",
+      "options": ["Tol Galen", "Tol Sirion", "Tol Morwen", "Balar"],
+      "answer": "Balar"
+    }
+  ]
+}

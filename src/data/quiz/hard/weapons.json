@@ -1,0 +1,21 @@
+{
+  "difficulty": "hard",
+  "category": "Weapons",
+  "questions": [
+    {
+      "question": "Which sword was reforged from the shards of Anglachel?",
+      "options": ["Gurthang", "Andúril", "Ringil", "Aranrúth"],
+      "answer": "Gurthang"
+    },
+    {
+      "question": "What weapon did Ecthelion use to slay Gothmog, Lord of Balrogs?",
+      "options": ["A silver sword", "A battle axe", "A spike of his helmet", "His bare hands"],
+      "answer": "A spike of his helmet"
+    },
+    {
+      "question": "Which weapon was wielded by Fingolfin in his duel with Morgoth?",
+      "options": ["Gurthang", "Ringil", "Anguirel", "Glamdring"],
+      "answer": "Ringil"
+    }
+  ]
+}

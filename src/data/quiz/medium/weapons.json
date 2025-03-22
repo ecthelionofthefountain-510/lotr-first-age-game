@@ -1,0 +1,31 @@
+{
+  "difficulty": "medium",
+  "category": "Weapons",
+  "questions": [
+    {
+      "question": "Who reforged Anglachel into Gurthang?",
+      "options": ["Curufin", "Thingol", "Eöl", "Telchar"],
+      "answer": "Telchar"
+    },
+    {
+      "question": "What weapon did Ecthelion use to slay Gothmog?",
+      "options": ["Spear", "Sword", "Axe", "His helm"],
+      "answer": "His helm"
+    },
+    {
+      "question": "Which weapon did Fingolfin use in his duel against Morgoth?",
+      "options": ["Grond", "Ringil", "Gurthang", "Angrist"],
+      "answer": "Ringil"
+    },
+    {
+      "question": "Which of these weapons was made from meteoric iron?",
+      "options": ["Gurthang", "Ringil", "Angrist", "Anglachel"],
+      "answer": "Anglachel"
+    },
+    {
+      "question": "Which of these was NOT a weapon crafted by Telchar?",
+      "options": ["Narsil", "Gurthang", "Angrist", "Ringil"],
+      "answer": "Ringil"
+    }
+  ]
+}

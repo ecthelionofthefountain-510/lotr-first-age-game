@@ -4,7 +4,7 @@ const CharacterProgress = ({ progress }) => {
   if (!progress) {
     return (
       <div className="mt-2 text-gray-400">
-        Ny berättelse
+        New story
       </div>
     );
   }
@@ -12,14 +12,14 @@ const CharacterProgress = ({ progress }) => {
   if (progress.completed) {
     return (
       <div className="mt-2 text-green-400">
-        Avslutad
+        Finished
       </div>
     );
   }
 
   return (
     <div className="mt-2 text-yellow-400">
-      Fortsätt från: {progress.location}
+      Continue from: {progress.location}
     </div>
   );
 };

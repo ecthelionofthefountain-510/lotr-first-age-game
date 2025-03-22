@@ -1,0 +1,115 @@
+{
+  "difficulty": "easy",
+  "questions": [
+    {
+      "question": "What is the name of the continent where most of the First Age stories take place?",
+      "options": [
+        "Aman",
+        "Beleriand",
+        "Middle-earth",
+        "Numenor"
+      ],
+      "answer": "Beleriand",
+      "category": "Geography"
+    },
+    {
+      "question": "Who was the greatest Elven smith and creator of the Silmarils?",
+      "options": [
+        "Fëanor",
+        "Finwë",
+        "Maedhros",
+        "Celebrimbor"
+      ],
+      "answer": "Fëanor",
+      "category": "General"
+    },
+    {
+      "question": "Which character is known for slaying Morgoth's first great dragon, Glaurung?",
+      "options": [
+        "Húrin",
+        "Túrin",
+        "Fingolfin",
+        "Ecthelion"
+      ],
+      "answer": "Túrin",
+      "category": "General"
+    },
+    {
+      "question": "Which of these characters is a Maia?",
+      "options": [
+        "Melian",
+        "Finrod",
+        "Thingol",
+        "Glorfindel"
+      ],
+      "answer": "Melian",
+      "category": "General"
+    },
+    {
+      "question": "What was the name of the hidden Elven city built by Turgon?",
+      "options": [
+        "Doriath",
+        "Nargothrond",
+        "Gondolin",
+        "Menegroth"
+      ],
+      "answer": "Gondolin",
+      "category": "Geography"
+    },
+    {
+      "question": "Who fell in love with Lúthien?",
+      "options": [
+        "Fëanor",
+        "Túrin",
+        "Beren",
+        "Maeglin"
+      ],
+      "answer": "Beren",
+      "category": "General"
+    },
+    {
+      "question": "Which sea lies between Aman and Middle-earth?",
+      "options": [
+        "Sea of Rhûn",
+        "Bay of Balar",
+        "Belegaer",
+        "Helcaraxë"
+      ],
+      "answer": "Belegaer",
+      "category": "General"
+    },
+    {
+      "question": "Which race was created by Aulë?",
+      "options": [
+        "Elves",
+        "Men",
+        "Dwarves",
+        "Ents"
+      ],
+      "answer": "Dwarves",
+      "category": "General"
+    },
+    {
+      "question": "Who was the High King of the Noldor when they first returned to Middle-earth?",
+      "options": [
+        "Fëanor",
+        "Finarfin",
+        "Fingolfin",
+        "Finwë"
+      ],
+      "answer": "Fingolfin",
+      "category": "Lineages"
+    },
+    {
+      "question": "What was the name of the great enemy and dark lord of the First Age?",
+      "options": [
+        "Sauron",
+        "Morgoth",
+        "Ungoliant",
+        "Gothmog"
+      ],
+      "answer": "Morgoth",
+      "category": "General"
+    }
+  ]
+}

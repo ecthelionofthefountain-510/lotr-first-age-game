@@ -1,0 +1,115 @@
+{
+  "difficulty": "medium",
+  "questions": [
+    {
+      "question": "What is the name of the sword that Túrin reforges from Anglachel?",
+      "options": [
+        "Gurthang",
+        "Andúril",
+        "Narsil",
+        "Orcrist"
+      ],
+      "answer": "Gurthang",
+      "category": "Weapons"
+    },
+    {
+      "question": "Which Elven realm did Finrod Felagund rule?",
+      "options": [
+        "Gondolin",
+        "Nargothrond",
+        "Doriath",
+        "Hithlum"
+      ],
+      "answer": "Nargothrond",
+      "category": "Geography"
+    },
+    {
+      "question": "Who was known as the Lord of Waters among the Valar?",
+      "options": [
+        "Ulmo",
+        "Oromë",
+        "Mandos",
+        "Aulë"
+      ],
+      "answer": "Ulmo",
+      "category": "General"
+    },
+    {
+      "question": "Which of the Silmarils was recovered by Beren and Lúthien?",
+      "options": [
+        "The one in Morgoth's crown",
+        "The one taken by Fëanor",
+        "The one in Valinor",
+        "None"
+      ],
+      "answer": "The one in Morgoth's crown",
+      "category": "General"
+    },
+    {
+      "question": "Who built Gondolin?",
+      "options": [
+        "Fëanor",
+        "Turgon",
+        "Fingolfin",
+        "Thingol"
+      ],
+      "answer": "Turgon",
+      "category": "General"
+    },
+    {
+      "question": "Which creature did Húrin slay before being captured by Morgoth?",
+      "options": [
+        "An orc captain",
+        "A dragon",
+        "A Balrog",
+        "A warg"
+      ],
+      "answer": "A Balrog",
+      "category": "General"
+    },
+    {
+      "question": "Who forged the Silmarils?",
+      "options": [
+        "Celebrimbor",
+        "Fëanor",
+        "Maeglin",
+        "Aulë"
+      ],
+      "answer": "Fëanor",
+      "category": "General"
+    },
+    {
+      "question": "What is the name of the mountain range separating Beleriand from the lands to the north?",
+      "options": [
+        "Ered Luin",
+        "Ered Gorgoroth",
+        "Ered Engrin",
+        "Ered Wethrin"
+      ],
+      "answer": "Ered Engrin",
+      "category": "Geography"
+    },
+    {
+      "question": "Which Maia was sent to corrupt the Elves and Men as Morgoth's servant?",
+      "options": [
+        "Sauron",
+        "Gothmog",
+        "Eönwë",
+        "Melian"
+      ],
+      "answer": "Sauron",
+      "category": "General"
+    },
+    {
+      "question": "What was the name of Lúthien’s hound companion?",
+      "options": [
+        "Huan",
+        "Carcharoth",
+        "Draugluin",
+        "Gurth"
+      ],
+      "answer": "Huan",
+      "category": "General"
+    }
+  ]
+}

@@ -14,11 +14,14 @@ import HurinEnd from './pages/HurinEnd';
 import LuthienEnd from './pages/LuthienEnd';
 import FeanorEnd from './pages/FeanorEnd';
 import MelianEnd from './pages/MelianEnd'; // Add Melian's end page
+import JourneyPage from './pages/JourneyPage';
+import QuizPage from './components/QuizPage';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<StartPage />} />
+      <Route path="/journeys" element={<JourneyPage />} />
       <Route path="/character-selection" element={<CharacterSelection />} />
       <Route path="/game" element={<GamePage />} />
       <Route path="/battle-fingolfin" element={<BattleFingolfin />} />
@@ -32,6 +35,7 @@ function App() {
       <Route path="/end-luthien" element={<LuthienEnd />} />
       <Route path="/end-feanor" element={<FeanorEnd />} />
       <Route path="/end-melian" element={<MelianEnd />} /> 
+      <Route path="/quiz" element={<QuizPage />} />
     </Routes>
   );
 }

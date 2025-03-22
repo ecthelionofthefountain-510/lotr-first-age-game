@@ -1,0 +1,31 @@
+{
+  "difficulty": "medium",
+  "category": "Lineages",
+  "questions": [
+    {
+      "question": "Who was the father of Finrod Felagund?",
+      "options": ["Fëanor", "Fingolfin", "Finarfin", "Thingol"],
+      "answer": "Finarfin"
+    },
+    {
+      "question": "Which house of the Edain did Beren belong to?",
+      "options": ["House of Hador", "House of Haleth", "House of Bëor", "House of Marach"],
+      "answer": "House of Bëor"
+    },
+    {
+      "question": "Who was Maeglin’s mother?",
+      "options": ["Idril", "Aredhel", "Galadriel", "Lúthien"],
+      "answer": "Aredhel"
+    },
+    {
+      "question": "Who was the brother of Turgon?",
+      "options": ["Finrod", "Aegnor", "Fingon", "Fëanor"],
+      "answer": "Fingon"
+    },
+    {
+      "question": "Which of these is NOT a son of Fëanor?",
+      "options": ["Curufin", "Amras", "Eärendil", "Maglor"],
+      "answer": "Eärendil"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "difficulty": "hard",
+  "category": "Geography",
+  "questions": [
+    {
+      "question": "What was the name of the northern pass through the Ered Gorgoroth?",
+      "options": ["Anach Pass", "Aglon", "Cirith Thoronath", "Nan Dungortheb"],
+      "answer": "Aglon"
+    },
+    {
+      "question": "Which river marked the southern border of Doriath?",
+      "options": ["Sirion", "Aros", "Esgalduin", "Gelion"],
+      "answer": "Aros"
+    },
+    {
+      "question": "Where was the fortress of Minas Tirith located during the First Age?",
+      "options": ["Gondolin", "Tol Sirion", "Himring", "Nargothrond"],
+      "answer": "Tol Sirion"
+    }
+  ]
+}

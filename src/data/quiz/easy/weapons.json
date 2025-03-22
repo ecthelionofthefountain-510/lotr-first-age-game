@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question": "What was the name of Túrin’s black sword?",
+      "options": ["Gurthang", "Andúril", "Anglachel", "Narsil"],
+      "answer": "Gurthang",
+      "category": "Weapons"
+    },
+    {
+      "question": "Which jewel(s) was Fëanor famous for creating?",
+      "options": ["Silmarils", "Palantíri", "Arkenstone", "Elessar"],
+      "answer": "Silmarils",
+      "category": "Weapons"
+    },
+    {
+      "question": "Which weapon did Fingolfin use in his duel with Morgoth?",
+      "options": ["Ringil", "Gurthang", "Glamdring", "Anguirel"],
+      "answer": "Ringil",
+      "category": "Weapons"
+    }
+  ]
+}

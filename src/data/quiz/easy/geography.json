@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question": "What is the name of the great sea west of Middle-earth?",
+      "options": ["Belegaer", "Helcaraxë", "Bay of Balar", "Sea of Rhûn"],
+      "answer": "Belegaer",
+      "category": "Geography"
+    },
+    {
+      "question": "Which hidden city did Turgon build?",
+      "options": ["Gondolin", "Nargothrond", "Doriath", "Menegroth"],
+      "answer": "Gondolin",
+      "category": "Geography"
+    },
+    {
+      "question": "Where did the Noldor first return to Middle-earth?",
+      "options": ["Helcaraxë", "Losgar", "Drengist", "Mithrim"],
+      "answer": "Losgar",
+      "category": "Geography"
+    }
+  ]
+}

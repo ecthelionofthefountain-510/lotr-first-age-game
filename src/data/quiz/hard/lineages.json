@@ -1,0 +1,21 @@
+{
+  "difficulty": "hard",
+  "category": "Lineages",
+  "questions": [
+    {
+      "question": "Who was the father of Eöl, the Dark Elf?",
+      "options": ["Thingol", "None is known", "Elenwë", "Lenwë"],
+      "answer": "None is known"
+    },
+    {
+      "question": "Which son of Fëanor was captured and mutilated by Morgoth?",
+      "options": ["Caranthir", "Curufin", "Maedhros", "Amrod"],
+      "answer": "Maedhros"
+    },
+    {
+      "question": "Which of the sons of Fëanor was most closely allied with Celegorm?",
+      "options": ["Caranthir", "Curufin", "Amras", "Maglor"],
+      "answer": "Curufin"
+    }
+  ]
+}

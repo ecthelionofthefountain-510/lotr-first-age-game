@@ -52,7 +52,7 @@ const CharacterSelection = () => {
 
   return (
     <div className="character-selection-container">
-      <h1 className="character-title">Välj din karaktär</h1>
+      <h1 className="character-title">Choose your character</h1>
       <div className="character-grid">
         {characters.map((char) => (
           <div 
@@ -72,9 +72,9 @@ const CharacterSelection = () => {
               <button 
                 className="reset-button" 
                 onClick={(e) => handleResetClick(char.name, e)}
-                title="Börja om berättelsen"
+                title="Restart character progress"
               >
-                Återställ
+                Reset
               </button>
             )}
           </div>
@@ -85,12 +85,12 @@ const CharacterSelection = () => {
       {showResetConfirm && (
         <div className="reset-confirm-modal">
           <div className="reset-confirm-content">
-            <h2>Återställ berättelse</h2>
-            <p>Är du säker på att du vill återställa all framsteg för {selectedCharacter}?</p>
-            <p>Detta kan inte ångras.</p>
+            <h2>Reset story</h2>
+            <p>Are you sure you wanna reset all progeress for {selectedCharacter}?</p>
+            <p>There is no going back once confirmed.</p>
             <div className="reset-confirm-buttons">
-              <button onClick={cancelReset} className="cancel-button">Avbryt</button>
-              <button onClick={confirmReset} className="confirm-button">Återställ</button>
+              <button onClick={cancelReset} className="cancel-button">Abort</button>
+              <button onClick={confirmReset} className="confirm-button">Reset</button>
             </div>
           </div>
         </div>

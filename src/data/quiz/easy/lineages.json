@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "question": "Who was the father of Fëanor?",
+      "options": ["Finwë", "Fingolfin", "Finarfin", "Maedhros"],
+      "answer": "Finwë",
+      "category": "Lineages"
+    },
+    {
+      "question": "Which house did Fingolfin belong to?",
+      "options": ["House of Fingolfin", "House of Fëanor", "House of Finarfin", "House of Hador"],
+      "answer": "House of Fingolfin",
+      "category": "Lineages"
+    },
+    {
+      "question": "Who was Lúthien's father?",
+      "options": ["Thingol", "Finrod", "Elu", "Elrond"],
+      "answer": "Thingol",
+      "category": "Lineages"
+    }
+  ]
+}

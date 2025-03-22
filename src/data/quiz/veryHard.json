@@ -1,0 +1,170 @@
+{
+  "difficulty": "very hard",
+  "questions": [
+    {
+      "question": "What was the name of the great wolf slain by Huan and Beren?",
+      "options": [
+        "Carcharoth",
+        "Draugluin",
+        "Thuringwethil",
+        "Gothmog"
+      ],
+      "answer": "Carcharoth",
+      "category": "General"
+    },
+    {
+      "question": "Who was the last King of Númenor?",
+      "options": [
+        "Elros",
+        "Tar-Palantir",
+        "Ar-Pharazôn",
+        "Tar-Míriel"
+      ],
+      "answer": "Ar-Pharazôn",
+      "category": "Lineages"
+    },
+    {
+      "question": "What was the secret pass used by Frodo and Sam to enter Mordor?",
+      "options": [
+        "Cirith Ungol",
+        "Isenmouthe",
+        "Udûn",
+        "Durthang"
+      ],
+      "answer": "Cirith Ungol",
+      "category": "Geography"
+    },
+    {
+      "question": "What jewel did Eärendil carry into the sky?",
+      "options": [
+        "A Silmaril",
+        "The Arkenstone",
+        "Nenya",
+        "Elendilmir"
+      ],
+      "answer": "A Silmaril",
+      "category": "Weapons"
+    },
+    {
+      "question": "Which Elven city was hidden in the valley of Tumladen?",
+      "options": [
+        "Gondolin",
+        "Doriath",
+        "Nargothrond",
+        "Vinyamar"
+      ],
+      "answer": "Gondolin",
+      "category": "Geography"
+    },
+    {
+      "question": "Which Vala was most opposed to the making of the Silmarils and distrusted Fëanor's ambition?",
+      "options": [
+        "Ulmo",
+        "Mandos",
+        "Tulkas",
+        "Aulë"
+      ],
+      "answer": "Ulmo",
+      "category": "Lineages"
+    },
+    {
+      "question": "What was the name of the wolf bred by Morgoth that slew Huan and Beren?",
+      "options": [
+        "Draugluin",
+        "Carcharoth",
+        "Garm",
+        "Ancalagon"
+      ],
+      "answer": "Carcharoth",
+      "category": "General"
+    },
+    {
+      "question": "Who was the last King of the First House of the Edain before its fall?",
+      "options": [
+        "Hador",
+        "Galdor",
+        "Húrin",
+        "Tuor"
+      ],
+      "answer": "Húrin",
+      "category": "Lineages"
+    },
+    {
+      "question": "What rare gemstone was used by Eöl the Dark Elf in the forging of Anglachel?",
+      "options": [
+        "Silima",
+        "Galvorn",
+        "Mithril",
+        "Nauglamír"
+      ],
+      "answer": "Galvorn",
+      "category": "General"
+    },
+    {
+      "question": "Which Elf first coined the name 'Morgoth' for Melkor?",
+      "options": [
+        "Fingolfin",
+        "Fëanor",
+        "Thingol",
+        "Finrod"
+      ],
+      "answer": "Fëanor",
+      "category": "General"
+    },
+    {
+      "question": "Who kept the Doors of Felagund in Nargothrond after Finrod's departure?",
+      "options": [
+        "Gwindor",
+        "Orodreth",
+        "Edrahil",
+        "Minaseth"
+      ],
+      "answer": "Orodreth",
+      "category": "General"
+    },
+    {
+      "question": "Which Maia was the master of spirits and served both Mandos and Lórien?",
+      "options": [
+        "Ilmarë",
+        "Arien",
+        "Estë",
+        "Fëanturi"
+      ],
+      "answer": "Fëanturi",
+      "category": "General"
+    },
+    {
+      "question": "What was the true identity of the being that guided Túrin and his men to Amon Rûdh?",
+      "options": [
+        "Beleg",
+        "Andróg",
+        "Mîm",
+        "Gwindor"
+      ],
+      "answer": "Mîm",
+      "category": "General"
+    },
+    {
+      "question": "Which hidden pass did Maedhros use to attack Thangorodrim during the Nirnaeth Arnoediad?",
+      "options": [
+        "Pass of Aglon",
+        "Anach",
+        "Cirith Ninniach",
+        "Isenmouthe"
+      ],
+      "answer": "Pass of Aglon",
+      "category": "Geography"
+    },
+    {
+      "question": "Who prophesied the Dagor Dagorath — the final battle in Tolkien’s legendarium?",
+      "options": [
+        "Mandos",
+        "Andreth",
+        "Glorfindel",
+        "Finrod"
+      ],
+      "answer": "Mandos",
+      "category": "General"
+    }
+  ]
+}

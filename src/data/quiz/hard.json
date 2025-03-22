@@ -1,0 +1,115 @@
+{
+  "difficulty": "hard",
+  "questions": [
+    {
+      "question": "What was the name of the sword Túrin used to slay Glaurung?",
+      "options": [
+        "Anglachel",
+        "Gurthang",
+        "Narsil",
+        "Orcrist"
+      ],
+      "answer": "Gurthang",
+      "category": "Weapons"
+    },
+    {
+      "question": "Which of the Sons of Fëanor swore the Oath of Fëanor first?",
+      "options": [
+        "Celegorm",
+        "Maedhros",
+        "Maglor",
+        "Caranthir"
+      ],
+      "answer": "Maedhros",
+      "category": "Lineages"
+    },
+    {
+      "question": "What fortress did Finrod Felagund build in Nargothrond?",
+      "options": [
+        "Minas Tirith",
+        "Barad-dûr",
+        "Gondolin",
+        "Nargothrond"
+      ],
+      "answer": "Nargothrond",
+      "category": "General"
+    },
+    {
+      "question": "Which river marked the western boundary of Doriath?",
+      "options": [
+        "Sirion",
+        "Aros",
+        "Gelion",
+        "Esgalduin"
+      ],
+      "answer": "Esgalduin",
+      "category": "Geography"
+    },
+    {
+      "question": "What was the fate of Eöl, the Dark Elf?",
+      "options": [
+        "He fled to the East",
+        "He became a servant of Morgoth",
+        "He was executed by Turgon",
+        "He was slain by orcs"
+      ],
+      "answer": "He was executed by Turgon",
+      "category": "General"
+    },
+    {
+      "question": "What was the true name of Glaurung's final victim, who unknowingly married her own brother?",
+      "options": [
+        "Morwen",
+        "Aredhel",
+        "Nienor",
+        "Finduilas"
+      ],
+      "answer": "Nienor",
+      "category": "General"
+    },
+    {
+      "question": "Which Vala was responsible for shaping the mountains of Middle-earth?",
+      "options": [
+        "Tulkas",
+        "Ulmo",
+        "Aulë",
+        "Mandos"
+      ],
+      "answer": "Aulë",
+      "category": "Geography"
+    },
+    {
+      "question": "What is the name of the sword reforged from the shards of Narsil?",
+      "options": [
+        "Andúril",
+        "Gurthang",
+        "Anglachel",
+        "Ringil"
+      ],
+      "answer": "Andúril",
+      "category": "Weapons"
+    },
+    {
+      "question": "What name did Beren use to disguise himself in the court of Thingol?",
+      "options": [
+        "Felagund",
+        "Erchamion",
+        "Dagnir",
+        "Gorthol"
+      ],
+      "answer": "Erchamion",
+      "category": "General"
+    },
+    {
+      "question": "Who composed the Ainulindalë?",
+      "options": [
+        "Eru Ilúvatar",
+        "Varda",
+        "Manwë",
+        "Fëanor"
+      ],
+      "answer": "Eru Ilúvatar",
+      "category": "General"
+    }
+  ]
+}
