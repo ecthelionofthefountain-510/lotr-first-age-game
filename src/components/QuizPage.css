@@ -42,7 +42,7 @@
   background-color: #d4af37;
   margin: 10px 0 20px 0;
   border-radius: 4px;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.999s ease-in-out;
 }
 
 /* Fade animations */
