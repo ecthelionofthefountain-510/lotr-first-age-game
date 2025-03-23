@@ -27,8 +27,9 @@ const StartPage = () => {
         <button onClick={() => navigate('/character-selection')}>Enter Middle-earth</button>
         <ContinueLastStory onContinue={handleContinue} /><br />
         <button onClick={() => navigate('/journeys')}>View Character Journeys</button>
+        
+        <button onClick={() => navigate('/quiz')}>Take the Quiz</button> <br />
         <button onClick={() => setShowHowToPlay(true)}>How to Play</button>
-        <button onClick={() => navigate('/quiz')}>Take the Quiz</button>
         
         
       </div>

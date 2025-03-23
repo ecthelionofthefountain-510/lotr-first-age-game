@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": "What was the original name of the Maia who later became Sauron?",
+      "options": ["Curumo", "Aiwendil", "Annatar", "Mairon"],
+      "answer": "Mairon",
+      "category": "Lore"
+    },
+    {
+      "question": "Which Vala was said to have created the Two Lamps, Illuin and Ormal?",
+      "options": ["Yavanna", "Aulë", "Manwë", "Varda"],
+      "answer": "Aulë",
+      "category": "Lore"
+    },
+    {
+      "question": "What was the name of the river that flowed through Gondolin?",
+      "options": ["Sirion", "Mindeb", "Eithel Sirion", "Aros"],
+      "answer": "Sirion",
+      "category": "Geography"
+    },
+    {
+      "question": "Who composed the *Ainulindalë*, the Music of the Ainur?",
+      "options": ["Manwë", "Eru Ilúvatar", "Varda", "Melkor"],
+      "answer": "Eru Ilúvatar",
+      "category": "Lore"
+    },
+    {
+      "question": "Which Elf first used the term 'Sindar' to refer to the Grey-elves?",
+      "options": ["Círdan", "Thingol", "Finwë", "Eöl"],
+      "answer": "Thingol",
+      "category": "Lineages"
+    },
+    {
+      "question": "Who was the mother of Lúthien Tinúviel?",
+      "options": ["Varda", "Yavanna", "Melian", "Galadriel"],
+      "answer": "Melian",
+      "category": "Lineages"
+    },
+    {
+      "question": "What is the Quenya word for 'star'?",
+      "options": ["elen", "elendil", "éarendil", "tirion"],
+      "answer": "elen",
+      "category": "Languages"
+    },
+    {
+      "question": "What was the name of the sword used by Túrin to slay Glaurung?",
+      "options": ["Gurthang", "Anglachel", "Narsil", "Dramborleg"],
+      "answer": "Gurthang",
+      "category": "Weapons"
+    },
+    {
+      "question": "What is the name of the land where the two Trees of Valinor grew?",
+      "options": ["Eldamar", "Valinor", "Aman", "Ezellohar"],
+      "answer": "Ezellohar",
+      "category": "Geography"
+    },
+    {
+      "question": "Which Dwarf made Angrist, the knife used to cut a Silmaril from Morgoth's crown?",
+      "options": ["Telchar", "Narvi", "Gamil Zirak", "Durin III"],
+      "answer": "Telchar",
+      "category": "Weapons"
+    }
+  ]
+}

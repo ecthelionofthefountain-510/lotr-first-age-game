@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "question": "What was the name of the sword used by Túrin to slay Glaurung?",
+      "options": ["Gurthang", "Anglachel", "Narsil", "Dramborleg"],
+      "answer": "Gurthang",
+      "category": "Weapons"
+    },
+    {
+      "question": "Which Dwarf made Angrist, the knife used to cut a Silmaril from Morgoth's crown?",
+      "options": ["Telchar", "Narvi", "Gamil Zirak", "Durin III"],
+      "answer": "Telchar",
+      "category": "Weapons"
+    }
+  ]
+}

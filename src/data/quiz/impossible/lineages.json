@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "question": "Which Elf first used the term 'Sindar' to refer to the Grey-elves?",
+      "options": ["Círdan", "Thingol", "Finwë", "Eöl"],
+      "answer": "Thingol",
+      "category": "Lineages"
+    },
+    {
+      "question": "Who was the mother of Lúthien Tinúviel?",
+      "options": ["Varda", "Yavanna", "Melian", "Galadriel"],
+      "answer": "Melian",
+      "category": "Lineages"
+    }
+  ]
+}

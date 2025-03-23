@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "question": "What was the name of the river that flowed through Gondolin?",
+      "options": ["Sirion", "Mindeb", "Eithel Sirion", "Aros"],
+      "answer": "Sirion",
+      "category": "Geography"
+    },
+    {
+      "question": "What is the name of the land where the two Trees of Valinor grew?",
+      "options": ["Eldamar", "Valinor", "Aman", "Ezellohar"],
+      "answer": "Ezellohar",
+      "category": "Geography"
+    }
+  ]
+}
