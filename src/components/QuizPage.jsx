@@ -165,7 +165,7 @@ const QuizPage = () => {
           </>
         ) : (
           <>
-            <h3>Select Category</h3>
+            <h1>Select Category</h1>
             <div className="category-buttons">
               {categories.map((cat) => (
                 <button
@@ -175,7 +175,7 @@ const QuizPage = () => {
                 >{cat}</button>
               ))}
             </div>
-            <h3>Now pick a difficulty</h3>
+            <h1>and pick a difficulty</h1>
             <div className="difficulty-buttons">
               {Object.keys(difficultyMap).concat('random').map((level) => (
                 <button
